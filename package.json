@@ -1,0 +1,23 @@
+{
+  "name": "coltonlwilliams",
+  "version": "1.0.0",
+  "description": "This is my portfolio website so folks can check out my web projects",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages -d public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clwilliams8/clwilliams8.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/clwilliams8/clwilliams8.github.io/issues"
+  },
+  "homepage": "https://clwilliams8.github.io/My-Portfolio",
+  "dependencies": {
+    "gh-pages": "^2.2.0"
+  }
+}
