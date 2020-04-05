@@ -1,1 +1,7 @@
 /* Custom CSS file used to overwrite theme css that is in main.css */
+
+@media only screen and (min-width:1024px) {
+    .main-menu-margin {
+        margin-top: 135px !important;
+    }
+}
