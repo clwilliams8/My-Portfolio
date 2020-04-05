@@ -4,7 +4,11 @@
   "description": "This is my portfolio website so folks can check out my web projects",
   "main": "index.js",
   "scripts": {
-    "deploy": "gh-pages -d public"
+    "deploy": "gh-pages -d public",
+    "dev": "npm run development",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "npm run development -- --watch",
+    "nunjucks": "node nunjucks.js"
   },
   "repository": {
     "type": "git",
@@ -17,7 +21,17 @@
     "url": "https://github.com/clwilliams8/clwilliams8.github.io/issues"
   },
   "homepage": "https://clwilliams8.github.io/My-Portfolio",
+  "devDependencies": {
+    "cross-env": "^7.0.2",
+    "laravel-mix": "^4.1.4",
+    "node-sass": "^4.13.1",
+    "resolve-url-loader": "^3.1.1",
+    "sass-loader": "^7.3.1",
+    "vue-template-compiler": "^2.6.11"
+  },
   "dependencies": {
-    "gh-pages": "^2.2.0"
+    "fs": "0.0.1-security",
+    "gh-pages": "^2.2.0",
+    "nunjucks": "^3.2.1"
   }
 }

@@ -6,13 +6,7 @@
 -->
 <html>
     <!-- <div id="header"></div> -->
-    <head>
-    <title>Colton's Portfolio</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/custom.css" />
-</head>
+    {% include "../../public/partials/head.html" %}
 	<body class="is-preload">
 
 		<!-- Wrapper -->
@@ -23,17 +17,7 @@
 						<div class="inner">
 
                             <!-- Header -->
-                            <header id="header">
-    <a href="index.html" class="logo"><strong>Portfolio</strong> by Colton Williams</a>
-    <ul class="icons">
-        <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-        <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-        <li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
-        <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-        <li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
-    </ul>
-</header>
-
+                            {% include "../../public/partials/header-socialLinks.html" %}
 
 							<!-- Banner -->
 								<section id="banner">
@@ -150,88 +134,10 @@
 					</div>
 
                     <!-- Sidebar & Footer -->
-                    <div id="sidebar">
-    <div class="inner">
-
-        <!-- Search -->
-            <section id="search" class="alt">
-                <form method="post" action="#">
-                    <input type="text" name="query" id="query" placeholder="Search" />
-                </form>
-            </section>
-
-        <!-- Menu -->
-            <nav id="menu">
-                <header class="major">
-                    <h2>Menu</h2>
-                </header>
-                <ul>
-                    <li><a href="index.html">Homepage</a></li>
-                    <li><a href="generic.html">Generic</a></li>
-                    <li><a href="elements.html">Elements</a></li>
-                    <li>
-                        <span class="opener">Submenu</span>
-                        <ul>
-                            <li><a href="#">Item 1</a></li>
-                            <li><a href="#">Item 2</a></li>
-                            <li><a href="#">Item 3</a></li>
-                            <li><a href="#">Item 4</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-
-        <!-- Section -->
-            <section>
-                <header class="major">
-                    <h2>Heading 2</h2>
-                </header>
-                <div class="mini-posts">
-                    <article>
-                        <a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
-                        <p>placeholder text going here for now friends.</p>
-                    </article>
-                    <article>
-                        <a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
-                        <p>placeholder text going here for now friends.</p>
-                    </article>
-                    <article>
-                        <a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
-                        <p>placeholder text going here for now friends.</p>
-                    </article>
-                </div>
-                <ul class="actions">
-                    <li><a href="#" class="button">More</a></li>
-                </ul>
-            </section>
-
-        <!-- Section -->
-            <section>
-                <header class="major">
-                    <h2>Get in touch</h2>
-                </header>
-                <p>Free free to shoot me and email or text if you need any work done or would like to just chat! You can also reach out to me by filling out <a class="custom-link" href="#"></a>this form</a></p>
-                <ul class="contact">
-                    <li class="icon solid fa-envelope"><a href="#">clwilliams4545@gmail.com</a></li>
-                    <li class="icon solid fa-phone">(501) 304-4100</li>
-                    <li class="icon solid fa-home">1975 N Highway 171<br />
-                    Malvern, AR 72104</li>
-                </ul>
-            </section>
-        <footer id="footer">
-            <p class="copyright">&copy; Colton's Apps. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-        </footer>
-
-    </div>
-</div>
+                    {% include "../../public/partials/sidebar-footer.html" %}
 			</div>
 
         <!-- Scripts -->
-        <script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
-<script src="assets/js/nunjucks.js"></script>
+        {% include "../../public/partials/scripts.html" %}
 	</body>
 </html>
