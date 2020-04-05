@@ -20,3 +20,8 @@ fs.writeFile("public/portfolio.html", nunjucks.render("resources/html/portfolio.
     if (err) console.log(err);
     console.log("Compiled the Nunjucks, captain.");
 });
+
+fs.writeFile("public/contact.html", nunjucks.render("resources/html/contact.njk"), function(err, data) {
+    if (err) console.log(err);
+    console.log("Compiled the Nunjucks, captain.");
+});

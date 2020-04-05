@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+    <!-- <div id="header"></div> -->
+    {% include "../../public/partials/head.html" %}
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+                            <!-- Header -->
+                            {% include "../../public/partials/header-socialLinks.html" %}
+
+                            <section>
+                            <!-- Form -->
+                            <h2>Contact me</h2>
+
+                            <p>Need a new website? Need updates or new features to your current website? 
+                               Let's have a Google Hangouts video conference meeting and see what we can figure out!
+                               Send me a message below.
+                            </p>
+
+                            <form method="post" action="https://formspree.io/mlewgazv">
+                                <div class="row gtr-uniform">
+                                    <div class="col-6 col-12-xsmall">
+                                        <input type="text" name="Name" id="demo-name" value="" placeholder="Name" />
+                                    </div>
+                                    <div class="col-6 col-12-xsmall">
+                                        <input type="email" name="Email" id="demo-email" value="" placeholder="Email" />
+                                    </div>
+                                    <!-- Break -->
+                                    <div class="col-12">
+                                        <textarea name="Message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
+                                    </div>
+                                    <!-- Break -->
+                                    <div class="col-12">
+                                        <ul class="actions">
+                                            <li><input type="submit" value="Send Message" class="primary" /></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </section>
+
+						</div>
+					</div>
+
+                    <!-- Sidebar & Footer -->
+                    {% include "../../public/partials/sidebar-footer.html" %}
+			</div>
+
+        <!-- Scripts -->
+        {% include "../../public/partials/scripts.html" %}
+	</body>
+</html>
