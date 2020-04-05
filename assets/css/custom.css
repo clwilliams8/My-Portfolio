@@ -1,1 +1,6 @@
 /* Custom CSS file used to overwrite theme css that is in main.css */
+
+.body {
+  padding: 20px;
+}
+
