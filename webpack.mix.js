@@ -14,6 +14,7 @@ mix.setPublicPath('public');
 
 mix.sass('resources/assets/sass/custom.scss', 'public/assets/css')
    .js('resources/assets/js/nunjucks.js', 'public/assets/js')
+   .js('resources/assets/js/nanogallery2.js', 'public/assets/js')
    .version();
 
 // Full API

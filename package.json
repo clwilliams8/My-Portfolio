@@ -32,6 +32,7 @@
   "dependencies": {
     "fs": "0.0.1-security",
     "gh-pages": "^2.2.0",
+    "nanogallery2": "^2.4.2",
     "nunjucks": "^3.2.1"
   }
 }
