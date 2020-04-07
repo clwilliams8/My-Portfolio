@@ -104,7 +104,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/colton/Desktop/Code/coltons-apps/resources/assets/js/nanogallery2.js */"./resources/assets/js/nanogallery2.js");
+module.exports = __webpack_require__(/*! C:\Users\Colton\Desktop\Code\My-Portfolio\resources\assets\js\nanogallery2.js */"./resources/assets/js/nanogallery2.js");
 
 
 /***/ })

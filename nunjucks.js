@@ -2,33 +2,29 @@ const nunjucks = require("nunjucks");
 const fs = require("fs");
 
 // main pages
-fs.writeFile("public/index.html", nunjucks.render("resources/html/index.njk"), function(err, data) {
-    if (err) console.log(err);
-    console.log("Compiled the Nunjucks, captain.");
+const mainFolder = 'resources/html/';
+
+//compile main pages into public directory
+fs.readdir(mainFolder, (err, files) => {
+    files.forEach(file => {
+        if (file.substring(file.length - 4, file.length) == '.njk') {
+            fs.writeFile("public/" + file.substring(0, file.length - 4) + '.html', nunjucks.render("resources/html/" + file), (err, data) => {
+                if (err) throw err;
+                console.log("Compiled " + file.substring(0, file.length - 4) + '.html' + ", bro.");
+            });
+        };
+    });
 });
 
-fs.writeFile("public/generic.html", nunjucks.render("resources/html/generic.njk"), function(err, data) {
-    if (err) console.log(err);
-    console.log("Compiled the Nunjucks, captain.");
-});
-
-fs.writeFile("public/elements.html", nunjucks.render("resources/html/elements.njk"), function(err, data) {
-    if (err) console.log(err);
-    console.log("Compiled the Nunjucks, captain.");
-});
-
-fs.writeFile("public/portfolio.html", nunjucks.render("resources/html/portfolio.njk"), function(err, data) {
-    if (err) console.log(err);
-    console.log("Compiled the Nunjucks, captain.");
-});
-
-fs.writeFile("public/contact.html", nunjucks.render("resources/html/contact.njk"), function(err, data) {
-    if (err) console.log(err);
-    console.log("Compiled the Nunjucks, captain.");
-});
-
-// portfolio files
-fs.writeFile("public/portfolio/hanks-mobile-app.html", nunjucks.render("resources/html/portfolio/hanks-mobile-app.njk"), function(err, data) {
-    if (err) console.log(err);
-    console.log("Compiled the Nunjucks, captain.");
+// portfolio files, compil to public
+const portfolioFolder = 'resources/html/portfolio/';
+fs.readdir(portfolioFolder, (err, files) => {
+    files.forEach(file => {
+        if (file.substring(file.length - 4, file.length) == '.njk') {
+            fs.writeFile("public/portfolio/" + file.substring(0, file.length - 4) + '.html', nunjucks.render(portfolioFolder + file), (err, data) => {
+                if (err) throw err;
+                console.log("Porfolio " + file.substring(0, file.length - 4) + '.html' + " compiled.");
+            });
+        };
+    });
 });
