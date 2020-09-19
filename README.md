@@ -1,3 +1,3 @@
-# coltons-apps.tech
+# My Portfolio Website
 
-This is my portfolio website so folks can check out my web projects
+Check out my portfolio of work at <a href="https://coltons-apps.tech/" target="_blank">coltons-apps.tech</a>
