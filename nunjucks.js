@@ -16,7 +16,7 @@ fs.readdir(mainFolder, (err, files) => {
     });
 });
 
-// portfolio files, compil to public
+// portfolio files, compile to public
 const portfolioFolder = 'resources/html/portfolio/';
 fs.readdir(portfolioFolder, (err, files) => {
     files.forEach(file => {
