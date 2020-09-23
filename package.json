@@ -4,7 +4,7 @@
   "description": "This is my portfolio website so folks can check out my web projects",
   "main": "index.js",
   "scripts": {
-    "deploy": "gh-pages -d public",
+    "deploy": "gh-pages -d dist",
     "dev": "npm run development",
     "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "watch": "npm run development -- --watch",
