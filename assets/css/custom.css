@@ -1,16 +1,16 @@
 /* Custom CSS file used to overwrite theme css that is in main.css */
-
 @media only screen and (min-width: 1024px) {
   .main-menu-margin {
-    margin-top: 135px !important;
-  }
-}
+    margin-top: 135px !important; } }
 
 .btn-blue {
   -moz-appearance: none;
   -webkit-appearance: none;
   -ms-appearance: none;
   appearance: none;
+  -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   background-color: transparent;
   border-radius: 0.375em;
@@ -29,18 +29,13 @@
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-  white-space: nowrap;
-}
+  white-space: nowrap; }
 
 .btn-blue:hover {
-  background-color: rgba(224, 228, 255, 0.5);
-}
+  background-color: rgba(224, 228, 255, 0.5); }
 
 a.btn-blue:hover {
-  color: #6a9bf5 !important;
-}
+  color: #6a9bf5 !important; }
 
 .block {
-  display: block  !important;
-}
-
+  display: block  !important; }
