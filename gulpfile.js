@@ -4,6 +4,7 @@ const imagemin = require('gulp-imagemin');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const sass = require('gulp-sass');
+var replace = require('gulp-replace');
 
 /*
  --TOP LEVEL FUNCTIONS
@@ -59,13 +60,21 @@ gulp.task('webfonts', async function() {
         .pipe(gulp.dest('dist/assets/webfonts'));
 });
 
-gulp.task('default', gulp.series('message','copyHtml','imageMin','copyCNAME','scripts','sass','webfonts'));
+// Cache busting task
+gulp.task('cacheBust', async function() {
+    const cbString = new Date().getTime();
+    console.log(cbString);
+    return gulp.src(['./dist/partials/*'])
+            .pipe(replace(/v=\d+/g, 'v=' + cbString))
+});
+
+gulp.task('default', gulp.series('message','copyHtml','imageMin','copyCNAME','scripts','sass','webfonts','cacheBust'));
 
 gulp.task('watch', function(){
-  gulp.watch('./src/html/**', gulp.series('copyHtml'));
+  gulp.watch('./src/html/**', gulp.series('copyHtml', 'cacheBust'));
   gulp.watch('CNAME', gulp.series('copyCNAME'));
-  gulp.watch('./src/assets/js/*', gulp.series('scripts'));
+  gulp.watch('./src/assets/js/*', gulp.series('scripts', 'cacheBust'));
   gulp.watch('./src/assets/images/**', gulp.series('imageMin'));
-  gulp.watch('./src/assets/sass/*.scss', gulp.series('sass'));
+  gulp.watch('./src/assets/sass/*.scss', gulp.series('sass', 'cacheBust'));
   gulp.watch('./src/assets/webfonts/*', gulp.series('webfonts'));
 });

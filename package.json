@@ -36,7 +36,8 @@
     "gulp-concat": "^2.6.1",
     "nunjucks": "^3.2.1",
     "gulp-nunjucks-render": "^2.2.3",
-    "fs": "0.0.1-security"
+    "fs": "0.0.1-security",
+    "gulp-replace": "^1.0.0"
   },
   "dependencies": {
     "gh-pages": "^2.2.0",
