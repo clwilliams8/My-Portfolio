@@ -20,12 +20,12 @@ gulp.task('message', async function(){
 
 // Compile .njk files into html
 gulp.task('copyHtml', async function(){
-    return gulp.src('src/html/**')
-            .pipe(nunjucks.precompile())
+    gulp.src('./src/html/**')
+            .pipe(nunjucks.compile())
             .pipe(gulp.dest('dist'))
 });
 
-// Compile .njk files into html
+// Compile CNAME file
 gulp.task('copyCNAME', async function(){
     return gulp.src('CNAME')
             .pipe(gulp.dest('dist'))
@@ -33,14 +33,14 @@ gulp.task('copyCNAME', async function(){
 
 // Optimize Images
 gulp.task('imageMin', async function() {
-    return gulp.src('src/assets/images/**')
+    return gulp.src('./src/assets/images/**')
         .pipe(imagemin())
         .pipe(gulp.dest('dist/images'))
 });
 
 // Scripts
 gulp.task('scripts', async function() {
-    return gulp.src('src/assets/js/*.js')
+    return gulp.src('./src/assets/js/*')
         .pipe(concat('main.js'))
         .pipe(uglify())
         .pipe(gulp.dest('dist/assets/js'));
@@ -48,28 +48,24 @@ gulp.task('scripts', async function() {
 
 // Compile Sass
 gulp.task('sass', async function() {
-    return gulp.src('src/assets/sass/*.scss')
+    return gulp.src('./src/assets/sass/*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('dist/assets/css'));
 });
 
 // Compile webfonts
 gulp.task('webfonts', async function() {
-    return gulp.src('src/assets/webfonts/*')
+    return gulp.src('./src/assets/webfonts/*')
         .pipe(gulp.dest('dist/assets/webfonts'));
 });
 
-gulp.task('default', function () {
-    gulp.series('message', 'copyHtml', 'copyCNAME', 'scripts', 'sass', 'webfonts')
+gulp.task('default', gulp.series('message','copyHtml','imageMin','copyCNAME','scripts','sass','webfonts'));
+
+gulp.task('watch', function(){
+  gulp.watch('./src/html/**', gulp.series('copyHtml'));
+  gulp.watch('CNAME', gulp.series('copyCNAME'));
+  gulp.watch('./src/assets/js/*', gulp.series('scripts'));
+  gulp.watch('./src/assets/images/**', gulp.series('imageMin'));
+  gulp.watch('./src/assets/sass/*.scss', gulp.series('sass'));
+  gulp.watch('./src/assets/webfonts/*', gulp.series('webfonts'));
 });
-
-// gulp.task('default', ['message','copyHtml','copyCNAME','scripts','sass','webfonts']);
-
-// gulp.task('watch', function(){
-//   gulp.watch('src/html/**', ['copyHtml']);
-//   gulp.watch('CNAME', ['copyCNAME']);
-//   gulp.watch('src/assets/js/*.js', ['scripts']);
-//   gulp.watch('src/assets/images/**', ['imageMin']);
-//   gulp.watch('src/assets/sass/*.scss', ['sass']);
-//   gulp.watch('src/assets/webfonts/*', ['webfonts']);
-// });
