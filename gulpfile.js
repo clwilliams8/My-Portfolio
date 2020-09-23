@@ -66,15 +66,16 @@ gulp.task('cacheBust', async function() {
     console.log(cbString);
     return gulp.src(['./dist/partials/*'])
             .pipe(replace(/v=\d+/g, 'v=' + cbString))
+            .pipe(gulp.dest('.'))
 });
 
 gulp.task('default', gulp.series('message','copyHtml','imageMin','copyCNAME','scripts','sass','webfonts','cacheBust'));
 
 gulp.task('watch', function(){
-  gulp.watch('./src/html/**', gulp.series('copyHtml', 'cacheBust'));
+  gulp.watch('./src/html/**', gulp.series('copyHtml','cacheBust'));
   gulp.watch('CNAME', gulp.series('copyCNAME'));
-  gulp.watch('./src/assets/js/*', gulp.series('scripts', 'cacheBust'));
+  gulp.watch('./src/assets/js/*', gulp.series('scripts','cacheBust'));
   gulp.watch('./src/assets/images/**', gulp.series('imageMin'));
-  gulp.watch('./src/assets/sass/*.scss', gulp.series('sass', 'cacheBust'));
+  gulp.watch('./src/assets/sass/*.scss', gulp.series('sass','cacheBust'));
   gulp.watch('./src/assets/webfonts/*', gulp.series('webfonts'));
 });
