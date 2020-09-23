@@ -5,15 +5,7 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-    <head>
-    <title>Colton's Portfolio</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="../assets/css/main.css" />
-    <link rel="stylesheet" href="../assets/css/custom.css" />
-    <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
-    <link  href="https://unpkg.com/nanogallery2@2.4.2/dist/css/nanogallery2.min.css" rel="stylesheet" type="text/css">
-</head>
+    {% include "./partials/headPortfolioDetail.html" %}
 	<body class="is-preload">
 
 		<!-- Wrapper -->
@@ -25,25 +17,17 @@
 						<div class="inner">
 
 							<!-- Header -->
-                            <header id="header">
-    <a href="index.html" class="logo">Colton Williams</a>
-    <ul class="icons">
-        <li><a target="_blank" href="https://github.com/clwilliams8" class="icon brands fab fa-github"><span class="label">Github</span></a></li>
-        <li><a target="_blank" href="https://www.facebook.com/colton.williams.509994/" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-        <li><a target="_blank" href="https://www.linkedin.com/in/colton-williams7/" class="icon brands fab fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-    </ul>
-</header>
-
+                            {% include "./partials/header-socialLinks.html" %}
 
                             <!-- Content -->
                              <!-- Back button -->
                                 <a href="../portfolio.html" class="button" style="margin-top: 35px;"><i class="fas fa-chevron-left"></i> Back to portfolio</a>
 								<section>
 									<header class="main">
-										<h1>Hank's Fine Furniture App</h1>
+										<h1>Fish 'N Stuff</h1>
 									</header>
 
-									<span class="image main"><img src="/images/portfolio/hanks/Hanks-New-Logo.jpg" alt="" /></span>
+									<span class="image main"><img src="../images/portfolio/fish-n-stuff/home.png" alt="" /></span>
 
                                     <h2>About Hank's</h2>
 									<p>Founded in 1975 by Hank Browne, Hank's Fine Furniture has grown to 14 stores in 4 states and is one of America's Top 100 Independent Furniture Retailers. From the very beginning, Hank's Fine Furniture's success has been built on offering quality furniture, bedding and accessories at excellent values. As a family-owned business, Hank's Fine Furniture has thrived because of our dedication to service after the sale. You, the customer, have been the most important part of our business for over 40 years.</p>
@@ -74,15 +58,13 @@
                                             }' >
                                             
                                         <!-- gallery content -->
-                                        <a href = "/images/portfolio/hanks/splashScreen.png"   data-ngThumb = "/images/portfolio/hanks/splashScreen.png"> splashScreen.png</a>
-                                        <a href = "/images/portfolio/hanks/splashScreenAndroid.png"   data-ngThumb = "/images/portfolio/hanks/splashScreenAndroid.png" > splashScreenAndroid.png </a>
-                                        <a href = "/images/portfolio/hanks/splashScreenIOS.png"   data-ngThumb = "/images/portfolio/hanks/splashScreenIOS.png" > splashScreenIOS.png </a>
-                                        <a href = "/images/portfolio/hanks/splashScreenTablet.png"   data-ngThumb = "/images/portfolio/hanks/splashScreenTablet.png"> splashScreenTablet.png </a>
-                                        <a href = "/images/portfolio/hanks/splashScreenTabletLandscape.png"   data-ngThumb = "/images/portfolio/hanks/splashScreenTabletLandscape.png" > splashScreenTabletLandscape.png </a>
+                                        <a href = "../images/portfolio/hanks/splashScreen.png"   data-ngThumb = "../images/portfolio/hanks/splashScreen.png"> splashScreen.png</a>
+                                        <a href = "../images/portfolio/hanks/splashScreenAndroid.png"   data-ngThumb = "../images/portfolio/hanks/splashScreenAndroid.png" > splashScreenAndroid.png </a>
+                                        <a href = "../images/portfolio/hanks/splashScreenIOS.png"   data-ngThumb = "../images/portfolio/hanks/splashScreenIOS.png" > splashScreenIOS.png </a>
+                                        <a href = "../images/portfolio/hanks/splashScreenTablet.png"   data-ngThumb = "../images/portfolio/hanks/splashScreenTablet.png"> splashScreenTablet.png </a>
+                                        <a href = "../images/portfolio/hanks/splashScreenTabletLandscape.png"   data-ngThumb = "../images/portfolio/hanks/splashScreenTabletLandscape.png" > splashScreenTabletLandscape.png </a>
                                     </div>
 
-                                    <h3 style="margin-top: 20px;">Mockups I was given:</h3>
-                                    <img src="/images/portfolio/hanks/HanksApp-Draft.png" width="100%">
                                     <!-- ### end of the gallery definition ### -->
 
                                     <h2>Video Demo</h2>
@@ -90,9 +72,6 @@
 
                                     <h2>Summary</h2>
                                     <!-- My testimonial here -->
-                                        <p>This was an exciting project because I love this company. I remember Hank's commercial's from when I was little kid. 
-                                            My brothers and I would say the famous Hank's slogan "Hank's ... FINNNNNE Furniture :D".
-                                        <p>
 
                                         <p>At first, I thought would be that I would need to custom code the entire application as I had done with my Capstone project in college.
                                            I made a Mobile attendence taking application for highschools and colleges, that still isn't finished today. So I had no experience coding apps for iPhone, but I was ready to learn. We ended up doing research and decided to go with an app building tool because it would save time and money, 
@@ -115,69 +94,11 @@
 					</div>
 
 				<!-- Sidebar & Footer -->
-                <div id="sidebar">
-    <div class="inner">
-
-        <!-- Search -->
-            <!-- <section id="search" class="alt">
-                <form method="post" action="#">
-                    <input type="text" name="query" id="query" placeholder="Search" />
-                </form>
-            </section> -->
-
-        <!-- Menu -->
-            <nav id="menu" class="main-menu-margin" style="border-bottom: none;">
-                <header class="major">
-                    <h2>Menu</h2>
-                </header>
-                <ul>
-                    <li><a href="https://coltons-apps.tech/">Home</a></li>
-                    <li><a href="/portfolio.html">My Portfolio</a></li>
-                    <li><a href="/contact.html">Contact</a></li>
-                    <!-- <li><a href="generic.html">Content page</a></li> -->
-                    <!-- <li><a href="elements.html">Elements</a></li> -->
-                    <!-- <li>
-                        <span class="opener">Submenu</span>
-                        <ul>
-                            <li><a href="#">Item 1</a></li>
-                            <li><a href="#">Item 2</a></li>
-                            <li><a href="#">Item 3</a></li>
-                            <li><a href="#">Item 4</a></li>
-                        </ul>
-                    </li> -->
-                </ul>
-            </nav>
-
-        <!-- Section -->
-            <section>
-                <header class="major">
-                    <h2>Get in touch</h2>
-                </header>
-                <p>Free free to shoot me and email or text if you need any work done or would like to just chat! You can also reach out to me by filling out <a href="/contact.html">this form</a>.</p>
-                <ul class="contact">
-                    <li class="icon solid fa-envelope"><a href="mailto:clwilliams4545@gmail.com">clwilliams4545@gmail.com</a></li>
-                    <li class="icon solid fa-phone"><a href="tel:501-304-4100">(501) 304-4100</a></li>
-                    <!-- <li class="icon solid fa-home">1975 N Highway 171<br />
-                    Malvern, AR 72104</li> -->
-                </ul>
-            </section>
-        <footer id="footer">
-            <p class="copyright">&copy; Colton's Apps. All rights reserved.<br> Design: <a target="_blank" href="https://html5up.net">HTML5 UP</a>. Favicon: <a target="_blank" href="https://icons8.com/">icons8.com</a></p>
-        </footer>
-
-    </div>
-</div>
+                {% include "./partials/sidebar-footer.html" %}
 
 			</div>
 
 		<!-- Scripts -->
-        <script src="/assets/js/main.js?v=1"></script>
-<script  type="text/javascript" src="https://unpkg.com/nanogallery2@2.4.2/dist/jquery.nanogallery2.min.js"></script>
-
-<script>
-    function goBack() {
-      window.history.back();
-    }
-</script>
+        {% include "./partials/scripts.html" %}
 	</body>
 </html>
