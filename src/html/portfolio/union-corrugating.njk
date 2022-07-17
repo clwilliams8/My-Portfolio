@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+{% include "./partials/headPortfolioDetail.html" %}
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+
+            <div class="inner">
+
+                <!-- Header -->
+                {% include "./partials/header-socialLinks.html" %}
+
+                <!-- Content -->
+                <!-- Back button -->
+                <a href="../portfolio.html" class="button" style="margin-top: 35px;"><i class="fas fa-chevron-left"></i> Back to portfolio</a>
+                <section>
+                    <header class="main">
+                        <h1>Union Corrugating</h1>
+                    </header>
+                    <span class="image main"><img src="../images/portfolio/union-corrugating/responsive-showcase-mockup.png" alt="" /></span>
+
+                    <h2>About Union Corrugating</h2>
+                    <p>For over three-quarters of a century, Union Corrugating Company has served the metal building components market. The company was launched in 1946 when Mr. J. E. Union left West Virginia with his manually operated corrugating machine
+                        and settled in Fayetteville, NC. By the early 1950s, J.E. had built a small business that was struggling to survive. You can read more on <a href="https://www.unioncorrugating.com/about-us" target="_blank">their about page</a>.</p>
+
+                    <hr class="major" />
+
+                    <h2>About The Project</h2>
+                    <!-- About us page of company here -->
+                    <p><strong>Mission:</strong> This company is in the roofing industry and had just purchased Reed's Metals which is another client of ours. Union's site was old, not responsive and needed to be a more modern platform, and have better ways
+                        to receive quotes and showcase their work. We came up with a design and accomplished these task for them.</p>
+                    <p><strong>Technologies Used:</strong> Laravel, Tailwind CSS, Google Maps API, Google Geocode API</p>
+                    <p><strong>Links</strong>
+                        <ul style="margin-left: 28px; margin-top: -20px;">
+                            <li style="padding-bottom: 7px;"><a href="https://laravel.com/" target="_blank">Laravel docs</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://tailwindcss.com/" target="_blank">Tailwind CSS</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://developers.google.com/maps" target="_blank">Google Maps API</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://developers.google.com/maps/documentation/geocoding/overview" target="_blank">Google Geocode API</a></li>
+                        </ul>
+                    </p>
+                    <p><strong>Before: </strong><a target="_blank" href="https://web.archive.org/web/20200130074632/https://www.unioncorrugating.com/">From the Web Archives</a></p>
+                    <p><strong>After: </strong><a target="_blank" href="https://www.unioncorrugating.com/">Visit new live website</a></p>
+
+                    <h2>Video Demo</h2>
+                    <!-- Youtube video here -->
+
+                    <h2>Summary</h2>
+                    <!-- My testimonial here -->
+                    <p>I loved the design on this website. It is gorgeous. The homepage had some tricky elements to implement such as the Contractors Nationwide section, but I got the job done. The contractors page was search results was implemented the
+                        same way I did it on Hank's website. I used the <a href="https://www.geeksforgeeks.org/haversine-formula-to-find-distance-between-two-points-on-a-sphere/" target="_blank">Haversine Forumla</a> to find all contractors within 100
+                        miles of the user's search. I also really loved the panel index and detail pages. Very pretty design.</p>
+
+                </section>
+            </div>
+        </div>
+
+        <!-- Sidebar & Footer -->
+        {% include "./partials/sidebar-footer.html" %}
+
+    </div>
+
+    <!-- Scripts -->
+    {% include "./partials/scripts.html" %}
+</body>
+
+</html>

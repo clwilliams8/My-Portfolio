@@ -41,12 +41,14 @@
                     <p><strong>Mission:</strong> Get a new website built before their current <a href="https://helpx.adobe.com/muse/kb/adobe-muse-end-of-service.html" target="_blank">Adobe Muse website expires</a>. Also build custom e-commerece solution
                         so users can place orders on the website. The e-commerece solution uses the Storis API. All of their furniture inventory exist in this platform. We build the products on this site to sync with the products in Storis as well as
                         adding and subtracting from inventory when orders are placed.</p>
-                    <p><strong>Technologies Used:</strong> Laravel, Tailwind CSS, Storis eBridge API</p>
+                    <p><strong>Technologies Used:</strong> Laravel, Tailwind CSS, Storis eBridge API, Google Maps API, Google Geocode API</p>
                     <p><strong>Links</strong>
                         <ul style="margin-left: 28px; margin-top: -20px;">
                             <li style="padding-bottom: 7px;"><a href="https://laravel.com/" target="_blank">Laravel docs</a></li>
                             <li style="padding-bottom: 7px;"><a href="https://tailwindcss.com/" target="_blank">Tailwind CSS</a></li>
                             <li style="padding-bottom: 7px;"><a href="https://www.storis.com/ebridge-commerce-website-apis/" target="_blank">Storis eBridge API</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://developers.google.com/maps" target="_blank">Google Maps API</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://developers.google.com/maps/documentation/geocoding/overview" target="_blank">Google Geocode API</a></li>
                         </ul>
                     </p>
                     <p><strong>Before: </strong><a target="_blank" href="https://web.archive.org/web/20190324134305/https://hanksfurniture.com/">From the Web Archives</a></p>
@@ -59,7 +61,10 @@
                     <!-- My testimonial here -->
                     <p>This project was very fun. I love this company and have used them myself in real life. The website is very clean and easy to use. The e-commerce solution is very easy to use and turned out to be a great success for the client. They
                         did $70,000 in sales on the first month after launch through the website. So their return on investment for the work we did was very high. We built tools on the backend of the website to give them to ability to do all the things
-                        they need to do so that the website would require less maintenance for the future. I am very happy with the result and I am very proud of the team I worked with together to build this.</p>
+                        they need to do so that the website would require less maintenance for the future. The locations page also was a bit trick. I created a sidebar to display search results and the main section is a google map. I created this using
+                        Google Geocoding API on the backend to automatically save the latitude and longitude of the address they enter for their store's location. Then when a search is made on the frontend, it searches the database for any location within
+                        100 miles of the search using the <a href="https://www.geeksforgeeks.org/haversine-formula-to-find-distance-between-two-points-on-a-sphere/" target="_blank">Haversine Forumla</a>. At first I implemented this operation using PHP,
+                        however, I discovered a way to do it with an SQL query that was much faster.</p>
 
                 </section>
             </div>

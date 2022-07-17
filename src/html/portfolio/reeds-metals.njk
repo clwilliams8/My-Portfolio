@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+{% include "./partials/headPortfolioDetail.html" %}
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+
+            <div class="inner">
+
+                <!-- Header -->
+                {% include "./partials/header-socialLinks.html" %}
+
+                <!-- Content -->
+                <!-- Back button -->
+                <a href="../portfolio.html" class="button" style="margin-top: 35px;"><i class="fas fa-chevron-left"></i> Back to portfolio</a>
+                <section>
+                    <header class="main">
+                        <h1>Reed's Metals</h1>
+                    </header>
+                    <span class="image main"><img src="../images/portfolio/reeds-metals/responsive-showcase-mockup.png" alt="" /></span>
+
+                    <h2>About Reed's Metals</h2>
+                    <p>Reed's Metals, headquartered in Brookhaven, MS is one of the largest providers of metal roofing systems, metal roofing panels, pole barns, and pre-engineered steel buildings in the South. Reed's is comprised of 10 locations including
+                        8 manufacturing sites and 2 storefront locations. We have 3 IAS plants which include Brookhaven, MS - Florence, AL and Horseshoe Beach, FL (October 2021). We utilize state-of-the-art technology and fabrication methods to provide
+                        unprecedented quality and service - offering same-day availability on standard roofing orders and in-stock supplies, on-site roll-forming for standard seam projects, and job-site delivery within 72 hours on most projects. You can
+                        read more on <a href="https://reedsmetals.com/about/us" target="_blank">their about page</a>.</p>
+
+                    <hr class="major" />
+
+                    <h2>About The Project</h2>
+                    <!-- About us page of company here -->
+                    <p><strong>Mission:</strong> The client needed an updated design, a better way to show off their products and work, and a comprehensive quote system that included an automatic way to send the quotes to the right people at all their different
+                        locations. The quote system also sends a daily report showing the number of quotes for different categories of products for each location.</p>
+                    <p><strong>Technologies Used:</strong> Laravel, Bootstrap 4, Google Maps API, Google Geocode API</p>
+                    <p><strong>Links</strong>
+                        <ul style="margin-left: 28px; margin-top: -20px;">
+                            <li style="padding-bottom: 7px;"><a href="https://laravel.com/" target="_blank">Laravel docs</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://getbootstrap.com/docs/4.0/getting-started/introduction/" target="_blank">Bootstrap</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://developers.google.com/maps" target="_blank">Google Maps API</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://developers.google.com/maps/documentation/geocoding/overview" target="_blank">Google Geocode API</a></li>
+                        </ul>
+                    </p>
+                    <p><strong>Before: </strong><a target="_blank" href="https://web.archive.org/web/20170712175502/https://reedsmetals.com/">From the Web Archives</a></p>
+                    <p><strong>After: </strong><a target="_blank" href="https://reedsmetals.com/">Visit new live website</a></p>
+
+                    <h2>Video Demo</h2>
+                    <!-- Youtube video here -->
+
+                    <h2>Summary</h2>
+                    <!-- My testimonial here -->
+                    <p>This project was fun and quite challenging. I had never built a quote system like this one before. I had also not been experienced in using Cookies in Laravel. We used them to save the user's perferred location even if they are not
+                        logged into the application. Using this perferred location, we would automatically make sure their quote request went to that location, as well as highlighting their location more clearly on the google map on the locations page.
+                        There are call to action buttons in many places on the site including the galleries which allow the user to get a quote directly on the item they are looking at. This was a great project and we made our client a lot of money.</p>
+
+                </section>
+            </div>
+        </div>
+
+        <!-- Sidebar & Footer -->
+        {% include "./partials/sidebar-footer.html" %}
+
+    </div>
+
+    <!-- Scripts -->
+    {% include "./partials/scripts.html" %}
+</body>
+
+</html>
