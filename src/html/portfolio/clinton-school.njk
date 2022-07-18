@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+{% include "./partials/headPortfolioDetail.html" %}
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+
+            <div class="inner">
+
+                <!-- Header -->
+                {% include "./partials/header-socialLinks.html" %}
+
+                <!-- Content -->
+                <!-- Back button -->
+                <a href="../portfolio.html" class="button" style="margin-top: 35px;"><i class="fas fa-chevron-left"></i> Back to portfolio</a>
+                <section>
+                    <header class="main">
+                        <h1>Clinton School of Public Service</h1>
+                    </header>
+                    <span class="image main"><img src="../images/portfolio/clinton-school/responsive-showcase-mockup.png" alt="" /></span>
+
+                    <h2>About Clinton School of Public Service</h2>
+                    <p>The University of Arkansas Clinton School of Public Service, the first in the nation to offer a Master of Public Service, gives students the knowledge and experience to further their careers in the areas of nonprofit, governmental,
+                        volunteer, or private sector service. You can read more on <a href="https://www.clintonschool.uasys.edu/about/purpose/csps" target="_blank">their about page</a>.</p>
+
+                    <hr class="major" />
+
+                    <h2>About The Project</h2>
+                    <!-- About us page of company here -->
+                    <p><strong>Mission:</strong> Clinton School of Public Service needed a more modern design and simplier CMS system other than Wordpress to make the management of all their content easier to teach new people. We migrated over 2000 blog
+                        post to the new system.</p>
+                    <p><strong>Technologies Used:</strong> Laravel, Bootstrap 4</p>
+                    <p><strong>Links</strong>
+                        <ul style="margin-left: 28px; margin-top: -20px;">
+                            <li style="padding-bottom: 7px;"><a href="https://laravel.com/" target="_blank">Laravel docs</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://getbootstrap.com/docs/4.0/getting-started/introduction/" target="_blank">Bootstrap</a></li>
+                        </ul>
+                    </p>
+                    <p><strong>Before: </strong><a target="_blank" href="https://web.archive.org/web/20170823045734/https://clintonschool.uasys.edu/">From the Web Archives</a></p>
+                    <p><strong>After: </strong><a target="_blank" href="https://www.clintonschool.uasys.edu/">Visit new live website</a></p>
+
+                    <h2>Video Demo</h2>
+                    <!-- Youtube video here -->
+
+                    <h2>Summary</h2>
+                    <!-- My testimonial here -->
+                    <p>I worked on the backend and created the Donation page. The Donation page dealt with creating a form and connecting to a payment processor called Cybersource using their API where they could make single one time donations and recurring
+                        subscriptions to different scholarship funds. I also updated updated the hero and other images, and did a monthly accessibility scan and patch of updates to keep their website ADA compliant.</p>
+
+                </section>
+            </div>
+        </div>
+
+        <!-- Sidebar & Footer -->
+        {% include "./partials/sidebar-footer.html" %}
+
+    </div>
+
+    <!-- Scripts -->
+    {% include "./partials/scripts.html" %}
+</body>
+
+</html>

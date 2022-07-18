@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+{% include "./partials/headPortfolioDetail.html" %}
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+
+            <div class="inner">
+
+                <!-- Header -->
+                {% include "./partials/header-socialLinks.html" %}
+
+                <!-- Content -->
+                <!-- Back button -->
+                <a href="../portfolio.html" class="button" style="margin-top: 35px;"><i class="fas fa-chevron-left"></i> Back to portfolio</a>
+                <section>
+                    <header class="main">
+                        <h1>My Portfolio Site</h1>
+                    </header>
+                    <span class="image main"><img src="../images/portfolio/my-portfolio-site/responsive-showcase-mockup.png" alt="" /></span>
+
+                    <h2>About My Portfolio Site</h2>
+                    <p>I made this site to be able to quickly show people some of the projects I've worked on. I built it using Github Pages so I could save money on hosting and get something up and running quickly without having to buy a server. The only
+                        downside to using Github Pages is that you can't use a database; it only lets you host static webpages. I decided that in order to save the money that was fine with me and I would just structure my content to where I could move
+                        it into a database if I wanted one day. I followed along with one of my favorite YouTubers to get started, used a free online html theme to save time, and setup a compiler called nunjucks with gulp.</p>
+
+                    <hr class="major" />
+
+                    <h2>About The Project</h2>
+                    <!-- About us page of company here -->
+                    <p><strong>Mission:</strong> Make a portfolio website to get more jobs.</p>
+                    <p><strong>Technologies Used:</strong> Github Pages, YouTube, HTML5 UP theme, icons8 favicon, nunjucks, gulp.</p>
+                    <p><strong>Links</strong>
+                        <ul style="margin-left: 28px; margin-top: -20px;">
+                            <li style="padding-bottom: 7px;"><a href="https://pages.github.com/" target="_blank">Github Pages</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://www.youtube.com/c/TraversyMedia" target="_blank">Traversy Media Youtube Channel</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://html5up.net/" target="_blank">HTML5 UP</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://icons8.com/" target="_blank">icons8</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://www.npmjs.com/package/nunjucks" target="_blank">Nunjucks</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://www.npmjs.com/package/gulp" target="_blank">Gulp</a></li>
+                        </ul>
+                    </p>
+
+                    <h2>Summary</h2>
+                    <!-- My testimonial here -->
+                    <p>When I set out to make a portfolio site, I wanted to do it in the cheapest and easiest way possible. I discovered that you could host websites for free using Github. I decided to follow along with <a href="https://www.youtube.com/watch?v=SKXkC4SqtRk"
+                            target="_blank">this video</a> to get help setting up my project on Github pages. One of the issues I needed to solve was giving myself the ability to use partials so I could have a head partial, header partial, social media links
+                        partial, scripts partial, and sidebar-footer partial that is used on all pages. I discovered nunjucks in conjunction with gulp was a perfect solution for this. So I have all my .njk files, and assets in the src folder which compiles
+                        to the dist folder. The dist folder is what is actually served from the root of my website. I was able to complete this website in a single weekend and the only thing I'm paying for is the domain name "coltons-apps.tech". So It's
+                        a great long term solution for me.</p>
+
+                </section>
+            </div>
+        </div>
+
+        <!-- Sidebar & Footer -->
+        {% include "./partials/sidebar-footer.html" %}
+
+    </div>
+
+    <!-- Scripts -->
+    {% include "./partials/scripts.html" %}
+</body>
+
+</html>

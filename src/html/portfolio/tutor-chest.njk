@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+{% include "./partials/headPortfolioDetail.html" %}
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+
+            <div class="inner">
+
+                <!-- Header -->
+                {% include "./partials/header-socialLinks.html" %}
+
+                <!-- Content -->
+                <!-- Back button -->
+                <a href="../portfolio.html" class="button" style="margin-top: 35px;"><i class="fas fa-chevron-left"></i> Back to portfolio</a>
+                <section>
+                    <header class="main">
+                        <h1>Tutor Chest</h1>
+                    </header>
+                    <span class="image main"><img src="../images/portfolio/tutor-chest/responsive-showcase-mockup.png" alt="" /></span>
+
+                    <h2>About Tutor Chest</h2>
+                    <p>Tutor Chest is determined to deliver an accessible online environment that enhances learning for all students, parents, and educators. An easy to use, all-encompassing platform that connects parents with educators, provides resources,
+                        professional development opportunities, and a place to gain support and learn together. You can read more on <a href="https://tutorchest.com/about-us" target="_blank">their about page</a>.</p>
+
+                    <hr class="major" />
+
+                    <h2>About The Project</h2>
+                    <!-- About us page of company here -->
+                    <p><strong>Mission:</strong> This client found me on Fiverr and approach me with the following situation. She had already gone through one web development agency, and two other free lancers. The original website was a laravel app that
+                        had two user types: parents and teachers. Teachers can sign-up and create a profile with packages that parents can buy. Parents can search and browse teachers by a few different data points such as zip code and what type of subject
+                        that do tutor services for. The client was uphappy with how some of the pages looked and how she had no ability to edit the pages. The web dev company would want to charge her a substantial amount of money just to change pictures
+                        and text on pages that she already didn't like the design on. She tried to fix this problem herself by hiring a free lancer to create wordpress pages that could replace the pages she did not like and redirect to them. Well, the
+                        free lancer created this wordpress pages, but was unable to complete a redirection system to redirect back and forth between the Wordpress application pages and the Laravel application pages. I helped finish this work by creating
+                        a custom plugin on her Wordpress application that provided an API endpoint that would return all the html for that page so that I could keep everything inside of the laravel app and not have to use subdomains or anything like that.
+                        Finally, I create a WordpressPage middleware which would check if there is a wordpress URL on that API that matches the requested URL. If so, it would get that page and dump it out into the view, otherwise it would just use the
+                        laravel page. In additional to completing this functionality, I also completed other incomplete work that another free lancer did for her. This work was using Laravel Cashier and Stripe so that she could collect a payment from
+                        parents that subscribed. I also did some redesign on the laravel app, and made updates to the Wordpress theme to support a better mobile menu.</p>
+                    <p><strong>Technologies Used:</strong> Laravel, Wordpress, Wordpress API, Laravel Cashier, Laravel Forge, Bitbucket, Tailwind CSS.</p>
+                    <p><strong>Links</strong>
+                        <ul style="margin-left: 28px; margin-top: -20px;">
+                            <li style="padding-bottom: 7px;"><a href="https://laravel.com/" target="_blank">Laravel docs</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://developer.wordpress.org/" target="_blank">Wordpress</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://developer.wordpress.org/rest-api/" target="_blank">Wordpress API</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://laravel.com/docs/9.x/billing" target="_blank">Laravel Cashier</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://forge.laravel.com/" target="_blank">Laravel Forge</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://bitbucket.org/" target="_blank">Bitbucket</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://tailwindcss.com/" target="_blank">Tailwind CSS</a></li>
+                        </ul>
+                    </p>
+                    <p><strong>Before: </strong><a target="_blank" href="https://web.archive.org/web/20210620220640/https://tutorchest.com/">From the Web Archives</a></p>
+                    <p><strong>After: </strong><a target="_blank" href="https://tutorchest.com/">Visit new live website</a></p>
+
+                    <h2>Video Demo</h2>
+                    <!-- Youtube video here -->
+
+                    <h2>Summary</h2>
+                    <!-- My testimonial here -->
+                    <p>I really did this project as more of a charity because I felt bad that this client got screwed over 3-4 times in a row from developers making promises and undelivering for her. I only got paid a small amount of money for the work I
+                        did. I also really did it for the challenge of it. I didn't even know if it was possible to use the Wordpress pages and middleware in the way that I did and I told her that I would attempt it and that she didn't owe me any money
+                        if I was unable to complete the work. Luckily I was able to complete the work as planned, and from there we continued to work together to make various other updates. I have a brother with disabilities and that's why I love this
+                        project so much. I understand what's it like to have a kid that you love and that you need help with, and Tutor Chest offers a way to connect teachers and parents that is very helpful.</p>
+
+                </section>
+            </div>
+        </div>
+
+        <!-- Sidebar & Footer -->
+        {% include "./partials/sidebar-footer.html" %}
+
+    </div>
+
+    <!-- Scripts -->
+    {% include "./partials/scripts.html" %}
+</body>
+
+</html>

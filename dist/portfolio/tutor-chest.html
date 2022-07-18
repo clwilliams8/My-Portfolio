@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-179262461-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-179262461-1');
+</script>
+    <title>Colton's Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../assets/css/main.css?v=1" />
+    <link rel="stylesheet" href="../assets/css/custom.css?v=1" />
+    <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+    <link  href="https://unpkg.com/nanogallery2@2.4.2/dist/css/nanogallery2.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+
+            <div class="inner">
+
+                <!-- Header -->
+                <header id="header">
+    <a href="/" class="logo">Colton Williams</a>
+    <ul class="icons">
+        <li><a target="_blank" href="https://github.com/clwilliams8" class="icon brands fab fa-github"><span class="label">Github</span></a></li>
+        <li><a target="_blank" href="https://www.facebook.com/colton.williams.509994/" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+        <li><a target="_blank" href="https://www.linkedin.com/in/colton-williams7/" class="icon brands fab fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+    </ul>
+</header>
+
+                <!-- Content -->
+                <!-- Back button -->
+                <a href="../portfolio.html" class="button" style="margin-top: 35px;"><i class="fas fa-chevron-left"></i> Back to portfolio</a>
+                <section>
+                    <header class="main">
+                        <h1>Tutor Chest</h1>
+                    </header>
+                    <span class="image main"><img src="../images/portfolio/tutor-chest/responsive-showcase-mockup.png" alt="" /></span>
+
+                    <h2>About Tutor Chest</h2>
+                    <p>Tutor Chest is determined to deliver an accessible online environment that enhances learning for all students, parents, and educators. An easy to use, all-encompassing platform that connects parents with educators, provides resources,
+                        professional development opportunities, and a place to gain support and learn together. You can read more on <a href="https://tutorchest.com/about-us" target="_blank">their about page</a>.</p>
+
+                    <hr class="major" />
+
+                    <h2>About The Project</h2>
+                    <!-- About us page of company here -->
+                    <p><strong>Mission:</strong> This client found me on Fiverr and approach me with the following situation. She had already gone through one web development agency, and two other free lancers. The original website was a laravel app that
+                        had two user types: parents and teachers. Teachers can sign-up and create a profile with packages that parents can buy. Parents can search and browse teachers by a few different data points such as zip code and what type of subject
+                        that do tutor services for. The client was uphappy with how some of the pages looked and how she had no ability to edit the pages. The web dev company would want to charge her a substantial amount of money just to change pictures
+                        and text on pages that she already didn't like the design on. She tried to fix this problem herself by hiring a free lancer to create wordpress pages that could replace the pages she did not like and redirect to them. Well, the
+                        free lancer created this wordpress pages, but was unable to complete a redirection system to redirect back and forth between the Wordpress application pages and the Laravel application pages. I helped finish this work by creating
+                        a custom plugin on her Wordpress application that provided an API endpoint that would return all the html for that page so that I could keep everything inside of the laravel app and not have to use subdomains or anything like that.
+                        Finally, I create a WordpressPage middleware which would check if there is a wordpress URL on that API that matches the requested URL. If so, it would get that page and dump it out into the view, otherwise it would just use the
+                        laravel page. In additional to completing this functionality, I also completed other incomplete work that another free lancer did for her. This work was using Laravel Cashier and Stripe so that she could collect a payment from
+                        parents that subscribed. I also did some redesign on the laravel app, and made updates to the Wordpress theme to support a better mobile menu.</p>
+                    <p><strong>Technologies Used:</strong> Laravel, Wordpress, Wordpress API, Laravel Cashier, Laravel Forge, Bitbucket, Tailwind CSS.</p>
+                    <p><strong>Links</strong>
+                        <ul style="margin-left: 28px; margin-top: -20px;">
+                            <li style="padding-bottom: 7px;"><a href="https://laravel.com/" target="_blank">Laravel docs</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://developer.wordpress.org/" target="_blank">Wordpress</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://developer.wordpress.org/rest-api/" target="_blank">Wordpress API</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://laravel.com/docs/9.x/billing" target="_blank">Laravel Cashier</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://forge.laravel.com/" target="_blank">Laravel Forge</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://bitbucket.org/" target="_blank">Bitbucket</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://tailwindcss.com/" target="_blank">Tailwind CSS</a></li>
+                        </ul>
+                    </p>
+                    <p><strong>Before: </strong><a target="_blank" href="https://web.archive.org/web/20210620220640/https://tutorchest.com/">From the Web Archives</a></p>
+                    <p><strong>After: </strong><a target="_blank" href="https://tutorchest.com/">Visit new live website</a></p>
+
+                    <h2>Video Demo</h2>
+                    <!-- Youtube video here -->
+
+                    <h2>Summary</h2>
+                    <!-- My testimonial here -->
+                    <p>I really did this project as more of a charity because I felt bad that this client got screwed over 3-4 times in a row from developers making promises and undelivering for her. I only got paid a small amount of money for the work I
+                        did. I also really did it for the challenge of it. I didn't even know if it was possible to use the Wordpress pages and middleware in the way that I did and I told her that I would attempt it and that she didn't owe me any money
+                        if I was unable to complete the work. Luckily I was able to complete the work as planned, and from there we continued to work together to make various other updates. I have a brother with disabilities and that's why I love this
+                        project so much. I understand what's it like to have a kid that you love and that you need help with, and Tutor Chest offers a way to connect teachers and parents that is very helpful.</p>
+
+                </section>
+            </div>
+        </div>
+
+        <!-- Sidebar & Footer -->
+        <div id="sidebar">
+    <div class="inner">
+
+        <!-- Search -->
+            <!-- <section id="search" class="alt">
+                <form method="post" action="#">
+                    <input type="text" name="query" id="query" placeholder="Search" />
+                </form>
+            </section> -->
+
+        <!-- Menu -->
+            <nav id="menu" class="main-menu-margin" style="border-bottom: none;">
+                <header class="major">
+                    <h2>Menu</h2>
+                </header>
+                <ul>
+                    <li><a href="https://coltons-apps.tech/">Home</a></li>
+                    <li><a href="/portfolio.html">My Portfolio</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                    <li><a href="https://docs.google.com/document/d/1_yk3LBVMoL-Uv0ueI4l7uiG3RgzFWPYAcd5exvGgZOM/edit?usp=sharing" target="_blank">My Resume</a></li>
+                    <!-- <li><a href="generic.html">Content page</a></li> -->
+                    <!-- <li><a href="elements.html">Elements</a></li> -->
+                    <!-- <li>
+                        <span class="opener">Submenu</span>
+                        <ul>
+                            <li><a href="#">Item 1</a></li>
+                            <li><a href="#">Item 2</a></li>
+                            <li><a href="#">Item 3</a></li>
+                            <li><a href="#">Item 4</a></li>
+                        </ul>
+                    </li> -->
+                </ul>
+            </nav>
+
+        <!-- Section -->
+            <section>
+                <header class="major">
+                    <h2>Get in touch</h2>
+                </header>
+                <p>Free free to shoot me and email or text if you need any work done or would like to just chat! You can also reach out to me by filling out <a href="/contact.html">this form</a>.</p>
+                <ul class="contact">
+                    <li class="icon solid fa-envelope"><a href="mailto:clwilliams4545@gmail.com">clwilliams4545@gmail.com</a></li>
+                    <li class="icon solid fa-phone"><a href="tel:501-304-4100">(501) 304-4100</a></li>
+                    <!-- <li class="icon solid fa-home">1975 N Highway 171<br />
+                    Malvern, AR 72104</li> -->
+                </ul>
+            </section>
+        <footer id="footer">
+            <p class="copyright">&copy; Colton's Apps. All rights reserved.<br> Design: <a target="_blank" href="https://html5up.net">HTML5 UP</a>. Favicon: <a target="_blank" href="https://icons8.com/">icons8.com</a></p>
+        </footer>
+
+    </div>
+</div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="/assets/js/main.js?v=2"></script>
+<script  type="text/javascript" src="https://unpkg.com/nanogallery2@2.4.2/dist/jquery.nanogallery2.min.js"></script>
+
+<script>
+    function goBack() {
+      window.history.back();
+    }
+</script>
+</body>
+
+</html>
