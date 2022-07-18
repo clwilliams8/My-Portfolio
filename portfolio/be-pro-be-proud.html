@@ -1,0 +1,184 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-179262461-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-179262461-1');
+</script>
+    <title>Colton's Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../assets/css/main.css?v=1" />
+    <link rel="stylesheet" href="../assets/css/custom.css?v=1" />
+    <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+    <link  href="https://unpkg.com/nanogallery2@2.4.2/dist/css/nanogallery2.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+
+            <div class="inner">
+
+                <!-- Header -->
+                <header id="header">
+    <a href="/" class="logo">Colton Williams</a>
+    <ul class="icons">
+        <li><a target="_blank" href="https://github.com/clwilliams8" class="icon brands fab fa-github"><span class="label">Github</span></a></li>
+        <li><a target="_blank" href="https://www.facebook.com/colton.williams.509994/" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+        <li><a target="_blank" href="https://www.linkedin.com/in/colton-williams7/" class="icon brands fab fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+    </ul>
+</header>
+
+                <!-- Content -->
+                <!-- Back button -->
+                <a href="../portfolio.html" class="button" style="margin-top: 35px;"><i class="fas fa-chevron-left"></i> Back to portfolio</a>
+                <section>
+                    <header class="main">
+                        <h1>Be Pro Be Proud</h1>
+                    </header>
+                    <span class="image main"><img src="../images/portfolio/be-pro-be-proud/responsive-showcase-mockup.png" alt="" /></span>
+
+                    <h2>About Be Pro Be Proud</h2>
+                    <p>The best time to get started on your better future is right now. There are thousands of opportunities right here in Arkansas for skilled professionals. And this is where you’ll find them. If you’ve got the talent and the ambition,
+                        Arkansas's top employers are looking for you. And, in many cases, you can even learn while you earn. Connecting with your profitable career has never been easier. You can read more on <a href="https://www.beprobeproud.org/about-bpbp"
+                            target="_blank">their about page</a>.</p>
+
+                    <hr class="major" />
+
+                    <h2>About The Project</h2>
+                    <!-- About us page of company here -->
+                    <p><strong>Mission:</strong> Be Pro Be Proud is an organization that helps students across the country get connected to schools and job for their future. They get sponsored by local companies, universities, and governments. They have
+                        a truck that makes Tour Stops at highschools and demostrates different professions in the work force to the students. They have students at these events fill out a form to Join The Movement. This data can be view by sponsors. We
+                        also implemented a Twilio Text Message API so that students that have joined the movement can receive marketing messages. The main issue the client had when they came to us was scalability. Previously, when a new state or province
+                        would sign-up for their own Be Pro Be Proud website, the entire website would be rebuilt again as a new Wordpress application. This caused inconsistencies and differences in database structures and the client was having a hard
+                        time managing all the admins in different states. Our solution was to build the client a new multi-tenant application where an unlimited amount of state sites could be created because in reality it's all the same application and
+                        database, just with different domains pointing at the application, and the data in the application being scope by state id. This solution gave the client the ability to scale up quickly and consistently as they get more states
+                        to sign up for new websites.</p>
+                    <p><strong>Technologies Used:</strong> Laravel, Tailwind CSS, Google Maps API, Google Geocode API, Multi-tenant application architecture</p>
+                    <p><strong>Links</strong>
+                        <ul style="margin-left: 28px; margin-top: -20px;">
+                            <li style="padding-bottom: 7px;"><a href="https://laravel.com/" target="_blank">Laravel docs</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://tailwindcss.com/" target="_blank">Tailwind CSS</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://developers.google.com/maps" target="_blank">Google Maps API</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://developers.google.com/maps/documentation/geocoding/overview" target="_blank">Google Geocode API</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://en.wikipedia.org/wiki/Multitenancy" target="_blank">Multitenancy</a></li>
+                        </ul>
+                    </p>
+                    <p><strong>Before: </strong><a target="_blank" href="https://web.archive.org/web/20201126132353/https://www.beprobeproud.org/">From the Web Archives</a></p>
+                    <p><strong>After: </strong><a target="_blank" href="https://www.beprobeproud.org/">Visit new live website</a></p>
+
+                    <h2>Video Demo</h2>
+                    <!-- Youtube video here -->
+
+                    <h2>Summary</h2>
+                    <!-- My testimonial here -->
+                    <p>This project is first time I had to build a multi-tenant application. I learned that this architecture means that only a single instance of the application is running, while serving multiple customers. It is a great architecture that
+                        serves multiple use cases. We actually built two seperate multi-tenant applications for this project. The first one is the Main Be Pro State Website application, which at the time of this writing is these websites:
+                    </p>
+                    <ul style="margin-left: 28px; margin-top: -20px;">
+                        <li style="padding-bottom: 7px;"><a href="https://www.beprobeproud.org/" target="_blank">Be Pro Be Proud: Main Hub</a></li>
+                        <li style="padding-bottom: 7px;"><a href="http://beprobeproudar.org/" target="_blank">Be Pro Be Proud: Arkansas</a></li>
+                        <li style="padding-bottom: 7px;"><a href="https://www.beprobeproudga.org/" target="_blank">Be Pro Be Proud: Georgia</a></li>
+                        <li style="padding-bottom: 7px;"><a href="https://beprobeproudsc.org" target="_blank">Be Pro Be Proud: South Carolina</a></li>
+                        <li style="padding-bottom: 7px;"><a href="https://www.beprobeproudtn.org/" target="_blank">Be Pro Be Proud: Tennessee</a></li>
+                        <li style="padding-bottom: 7px;"><a href="https://www.beprobeproudnc.org/" target="_blank">Be Pro Be Proud: North Carolina</a></li>
+                    </ul>
+                    <p>The other multi-tenant application was the Join The Movement application which is where students would fill out their form to be shared with schools and employors:</p>
+                    <ul style="margin-left: 28px; margin-top: -20px;">
+                        <li style="padding-bottom: 7px;"><a href="https://join.beprobeproud.org/" target="_blank">Join The Movement: Main Hub</a></li>
+                        <li style="padding-bottom: 7px;"><a href="http://join.ar.beprobeproud.org/" target="_blank">Join The Movement: Arkansas</a></li>
+                        <li style="padding-bottom: 7px;"><a href="https://join.ga.beprobeproud.org/" target="_blank">Join The Movement: Georgia</a></li>
+                        <li style="padding-bottom: 7px;"><a href="https://join.sc.beprobeproud.org" target="_blank">Join The Movement: South Carolina</a></li>
+                        <li style="padding-bottom: 7px;"><a href="https://join.tn.beprobeproud.org/" target="_blank">Join The Movement: Tennessee</a></li>
+                        <li style="padding-bottom: 7px;"><a href="https://join.nc.beprobeproud.org/" target="_blank">Join The Movement: North Carolina</a></li>
+                    </ul>
+
+
+                </section>
+            </div>
+        </div>
+
+        <!-- Sidebar & Footer -->
+        <div id="sidebar">
+    <div class="inner">
+
+        <!-- Search -->
+            <!-- <section id="search" class="alt">
+                <form method="post" action="#">
+                    <input type="text" name="query" id="query" placeholder="Search" />
+                </form>
+            </section> -->
+
+        <!-- Menu -->
+            <nav id="menu" class="main-menu-margin" style="border-bottom: none;">
+                <header class="major">
+                    <h2>Menu</h2>
+                </header>
+                <ul>
+                    <li><a href="https://coltons-apps.tech/">Home</a></li>
+                    <li><a href="/portfolio.html">My Portfolio</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                    <li><a href="https://docs.google.com/document/d/1_yk3LBVMoL-Uv0ueI4l7uiG3RgzFWPYAcd5exvGgZOM/edit?usp=sharing" target="_blank">My Resume</a></li>
+                    <!-- <li><a href="generic.html">Content page</a></li> -->
+                    <!-- <li><a href="elements.html">Elements</a></li> -->
+                    <!-- <li>
+                        <span class="opener">Submenu</span>
+                        <ul>
+                            <li><a href="#">Item 1</a></li>
+                            <li><a href="#">Item 2</a></li>
+                            <li><a href="#">Item 3</a></li>
+                            <li><a href="#">Item 4</a></li>
+                        </ul>
+                    </li> -->
+                </ul>
+            </nav>
+
+        <!-- Section -->
+            <section>
+                <header class="major">
+                    <h2>Get in touch</h2>
+                </header>
+                <p>Free free to shoot me and email or text if you need any work done or would like to just chat! You can also reach out to me by filling out <a href="/contact.html">this form</a>.</p>
+                <ul class="contact">
+                    <li class="icon solid fa-envelope"><a href="mailto:clwilliams4545@gmail.com">clwilliams4545@gmail.com</a></li>
+                    <li class="icon solid fa-phone"><a href="tel:501-304-4100">(501) 304-4100</a></li>
+                    <!-- <li class="icon solid fa-home">1975 N Highway 171<br />
+                    Malvern, AR 72104</li> -->
+                </ul>
+            </section>
+        <footer id="footer">
+            <p class="copyright">&copy; Colton's Apps. All rights reserved.<br> Design: <a target="_blank" href="https://html5up.net">HTML5 UP</a>. Favicon: <a target="_blank" href="https://icons8.com/">icons8.com</a></p>
+        </footer>
+
+    </div>
+</div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="/assets/js/main.js?v=2"></script>
+<script  type="text/javascript" src="https://unpkg.com/nanogallery2@2.4.2/dist/jquery.nanogallery2.min.js"></script>
+
+<script>
+    function goBack() {
+      window.history.back();
+    }
+</script>
+</body>
+
+</html>
