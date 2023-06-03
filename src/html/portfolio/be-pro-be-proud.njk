@@ -38,13 +38,10 @@
 
                     <h2>About The Project</h2>
                     <!-- About us page of company here -->
-                    <p><strong>Mission:</strong> Be Pro Be Proud is an organization that helps students across the country get connected to schools and job for their future. They get sponsored by local companies, universities, and governments. They have
-                        a truck that makes Tour Stops at highschools and demostrates different professions in the work force to the students. They have students at these events fill out a form to Join The Movement. This data can be view by sponsors. We
-                        also implemented a Twilio Text Message API so that students that have joined the movement can receive marketing messages. The main issue the client had when they came to us was scalability. Previously, when a new state or province
-                        would sign-up for their own Be Pro Be Proud website, the entire website would be rebuilt again as a new Wordpress application. This caused inconsistencies and differences in database structures and the client was having a hard
-                        time managing all the admins in different states. Our solution was to build the client a new multi-tenant application where an unlimited amount of state sites could be created because in reality it's all the same application and
-                        database, just with different domains pointing at the application, and the data in the application being scope by state id. This solution gave the client the ability to scale up quickly and consistently as they get more states
-                        to sign up for new websites.</p>
+                    <p><strong>Mission:</strong> Be Pro Be Proud is an organization dedicated to assisting students nationwide in finding suitable educational opportunities and future employment. Through sponsorships from local companies, universities, and governments, they facilitate connections between students and potential schools or jobs. One of their key initiatives involves a mobile truck that visits high schools, showcasing various professions to students. At these events, students are encouraged to join the movement by filling out a form online that captures the students interest and aspirations as well as companies or colleges they are interested in. Through the same portal the students' submission is captured, we build a tool for sponsors to login and view the students submissions and contact them with the students permission.. Additionally, we integrated the Twilio Text Message API, enabling marketing messages to be sent to students who have joined the movement.<br>
+                        <br>When the client approached us, their primary concern was scalability. Previously, each state or province that signed up for their own Be Pro Be Proud website would result in an entirely new WordPress application being built. This approach led to inconsistencies and differences in database structures, making it challenging for the client to manage multiple administrators across different states. To address this, we developed a new multi-tenant application for the client.<br><br>
+                        Our solution involved creating a single application and database that could support an unlimited number of state-specific sites. By utilizing different domains that point to the same application, and scoping the data within the application based on state ID, we achieved a unified and scalable platform. This approach empowered the client to rapidly expand and maintain consistency as they onboarded more states for new websites.
+                        </p>
                     <p><strong>Technologies Used:</strong> Laravel, Tailwind CSS, Google Maps API, Google Geocode API, Multi-tenant application architecture</p>
                     <p><strong>Links</strong>
                         <ul style="margin-left: 28px; margin-top: -20px;">
@@ -63,8 +60,7 @@
 
                     <h2>Summary</h2>
                     <!-- My testimonial here -->
-                    <p>This project is first time I had to build a multi-tenant application. I learned that this architecture means that only a single instance of the application is running, while serving multiple customers. It is a great architecture that
-                        serves multiple use cases. We actually built two seperate multi-tenant applications for this project. The first one is the Main Be Pro State Website application, which at the time of this writing is these websites:
+                    <p>This project marked a significant milestone for me as it was the first time I undertook the development of a multi-tenant application. Through this architectural approach, a single instance of the application is capable of serving running all their different state websites under one roof instead of starting a new Wordpress build everytime, which then gets out of sync with plugins, content, and frontend themes. Multi-tenancy was a perfect solution for their use case. In fact, for this particular project, we built two separate multi-tenant applications. The first one is the Main Be Pro State Website application, which currently includes the following websites:
                     </p>
                     <ul style="margin-left: 28px; margin-top: -20px;">
                         <li style="padding-bottom: 7px;"><a href="https://www.beprobeproud.org/" target="_blank">Be Pro Be Proud: Main Hub</a></li>
