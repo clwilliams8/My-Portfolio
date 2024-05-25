@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Super Mario Brothers</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-color: #87CEEB;
+    }
+    canvas {
+        display: block;
+        margin: auto;
+        background-color: transparent;
+    }
+</style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    const c = document.getElementById("canvas"),
+          g = c.getContext("2d"),
+          gravity = 1,
+          friction = 0.8;
+
+    c.width = window.innerWidth;
+    c.height = window.innerHeight;
+    const groundHeight = c.height * 0.4; // 40% of the canvas height
+
+    let player = {
+        x: 50,
+        y: c.height - groundHeight - 80, // Increased size
+        width: 80, // Increased size
+        height: 80, // Increased size
+        speed: 5,
+        dx: 0,
+        dy: 0,
+        jumping: false,
+        grounded: false,
+        invincible: false,
+        blinkCounter: 0,
+        facingLeft: false // Added property for character direction
+    };
+
+    let keys = {};
+    let level = 1;
+    let hearts = 5;
+    let gameOver = false;
+    let scrollOffset = 0;
+    let isScrolling = false;
+
+    let heroImage = new Image();
+    heroImage.src = "../images/video-games/mario-brothers/mario-bro.png"; // Update with your hero image URL
+
+    let obstacleImages = [];
+    let groundImage = new Image();
+    let flagImage = new Image();
+
+    groundImage.src = "../images/video-games/mario-brothers/ground.jpeg"; // Update with your ground image URL
+    flagImage.src = "../images/video-games/mario-brothers/flag.png"; // Update with your flag image URL
+
+    let obstacles = generateObstacles();
+
+    window.addEventListener("keydown", e => {
+        keys[e.code] = true;
+    });
+
+    window.addEventListener("keyup", e => {
+        keys[e.code] = false;
+    });
+
+    function generateObstacles() {
+        let obs = [];
+        for (let i = 1; i <= 3; i++) {  // Adjust to 3 screens
+            obs.push({ x: i * c.width, y: c.height - groundHeight - 120, width: 120, height: 120, type: 'tube' }); // Increased size
+            obs.push({ x: i * c.width + 300, y: c.height - groundHeight - 60, width: 80, height: 60, type: 'turtle', startX: i * c.width + 300, direction: 'left', killed: false }); // Increased size
+        }
+        return obs;
+    }
+
+    let flag = { x: 3 * c.width, y: c.height - groundHeight - 120, width: 40, height: 120 };  // Adjust to 3 screens, Increased size
+
+    let drawPlayer = () => {
+        if (player.invincible) {
+            player.blinkCounter++;
+            if (player.blinkCounter % 20 < 10) {
+                return; // Skip drawing the player to create a blinking effect
+            }
+        }
+        if (player.facingLeft) {
+            // Flip the image horizontally
+            g.save();
+            g.translate(player.x + player.width, player.y);
+            g.scale(-1, 1);
+            g.drawImage(heroImage, 0, 0, player.width, player.height);
+            g.restore();
+        } else {
+            g.drawImage(heroImage, player.x, player.y, player.width, player.height);
+        }
+    };
+
+    let drawObstacles = () => {
+        obstacles.forEach(obs => {
+            if (obs.type === 'tube') {
+                g.drawImage(obstacleImages[0], obs.x - scrollOffset, obs.y, obs.width, obs.height);
+            } else if (obs.type === 'turtle') {
+                if (obs.killed) {
+                    g.save();
+                    g.translate(obs.x - scrollOffset + obs.width / 2, obs.y + obs.height / 2);
+                    g.scale(1, -1); // Flip vertically
+                    g.drawImage(obstacleImages[1], -obs.width / 2, -obs.height / 2, obs.width, obs.height);
+                    g.restore();
+                } else {
+                    g.drawImage(obstacleImages[1], obs.x - scrollOffset, obs.y, obs.width, obs.height);
+                }
+            }
+        });
+    };
+
+    let drawFlag = () => {
+        g.drawImage(flagImage, flag.x - scrollOffset, flag.y, flag.width, flag.height);
+    };
+
+    let drawGround = () => {
+        // Draw the brown ground base
+        g.fillStyle = "#8B4513";
+        g.fillRect(0, c.height - groundHeight, c.width, groundHeight * 1);
+        
+        // Draw the green grass top
+        g.fillStyle = "#228B22";
+        g.beginPath();
+        g.moveTo(0, c.height - groundHeight * 0.9);
+        for (let i = 0; i < c.width; i += 20) {
+            g.lineTo(i, c.height - groundHeight * 0.9 - (Math.sin(i * 0.1) * 10));
+        }
+        g.lineTo(c.width, c.height - groundHeight * 0.9);
+        g.lineTo(c.width, c.height - groundHeight);
+        g.lineTo(0, c.height - groundHeight);
+        g.closePath();
+        g.fill();
+    };
+
+    let drawLevelAndHearts = () => {
+        g.fillStyle = "#fff";
+        g.font = "20px Arial";
+        g.fillText(`Level: ${level}`, c.width - 150, 30);
+
+        for (let i = 0; i < hearts; i++) {
+            g.fillStyle = "#f00";
+            g.beginPath();
+            g.arc(c.width - 150 + i * 30, 60, 10, 0, Math.PI * 2);
+            g.fill();
+        }
+    };
+
+    let updatePlayer = () => {
+        if (keys['KeyA'] && !isCollidingWithTube(player.x - player.speed, player.y)) {
+            player.dx = -player.speed;
+            player.facingLeft = true; // Set direction to left
+        }
+        if (keys['KeyD'] && !isCollidingWithTube(player.x + player.speed, player.y)) {
+            player.dx = player.speed;
+            player.facingLeft = false; // Set direction to right
+        }
+        if (keys['Space'] && player.grounded) {
+            player.jumping = true;
+            player.grounded = false;
+            player.dy = -75; // Increased jump height by
+            player.dy = -75; // Increased jump height by 50%
+        }
+
+        player.dy += gravity;
+        player.dx *= friction;
+        player.dy *= friction;
+
+        if (player.x + player.dx <= c.width * 0.2 && player.dx < 0) {
+            isScrolling = true;
+            scrollOffset += player.dx;
+        } else if (player.x + player.dx >= c.width * 0.4 && player.dx > 0) {
+            isScrolling = true;
+            scrollOffset += player.dx;
+        } else {
+            if (!isCollidingWithTube(player.x + player.dx, player.y)) {
+                player.x += player.dx;
+                scrollOffset += player.dx;
+            }
+            isScrolling = false;
+        }
+
+        player.y += player.dy;
+
+        if (player.y + player.height >= c.height - groundHeight) {
+            player.y = c.height - groundHeight - player.height;
+            player.grounded = true;
+            player.jumping = false;
+        }
+
+        player.dx = 0; // Stop horizontal movement when key is released
+    };
+
+    let isCollidingWithTube = (x, y) => {
+        for (let i = 0; i < obstacles.length; i++) {
+            const obs = obstacles[i];
+            if (obs.type === 'tube' &&
+                x < obs.x + obs.width - scrollOffset &&
+                x + player.width > obs.x - scrollOffset &&
+                y < obs.y + obs.height &&
+                y + player.height > obs.y) {
+                return true;
+            }
+        }
+        return false;
+    };
+
+    let moveTurtles = () => {
+        obstacles.forEach(obs => {
+            if (obs.type === 'turtle' && !obs.killed) {
+                if (obs.direction === 'left') {
+                    obs.x -= 2; // Adjust turtle's leftward speed
+                    if (obs.x <= obs.startX - 100) {
+                        obs.direction = 'right';
+                    }
+                } else {
+                    obs.x += 2; // Adjust turtle's rightward speed
+                    if (obs.x >= obs.startX + 100) {
+                        obs.direction = 'left';
+                    }
+                }
+            }
+        });
+    };
+
+    let checkCollisions = () => {
+        obstacles.forEach(obs => {
+            if (!obs.killed && player.x < obs.x + obs.width - scrollOffset &&
+                player.x + player.width > obs.x - scrollOffset &&
+                player.y < obs.y + obs.height &&
+                player.y + player.height > obs.y) {
+                if (obs.type === 'tube' && player.dy > 0 &&
+                    player.y + player.height - 20 < obs.y) { // Player is above the tube
+                    // Bounce the player upward
+                    player.dy = -25;
+                } else if (obs.type === 'turtle' && !player.invincible && player.dy > 0 &&
+                    player.y + player.height - 20 < obs.y) { // Player is above the turtle
+                    obs.killed = true;
+                    player.dy = -25; // Bounce the player upward
+                } else if (obs.type === 'turtle' && !player.invincible) {
+                    hearts--;
+                    player.invincible = true;
+                    player.blinkCounter = 0;
+                    if (hearts <= 0) {
+                        gameOver = true;
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'error',
+                            title: 'Game Over',
+                            text: 'You ran out of hearts!',
+                            showConfirmButton: false,
+                            timer: 3000
+                        });
+                    } else {
+                        setTimeout(() => {
+                            player.invincible = false;
+                        }, 3000); // 3 seconds invincibility
+                    }
+                }
+            }
+        });
+
+        if (player.x + player.width > flag.x - scrollOffset &&
+            player.y + player.height > flag.y) {
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Winner Winner!',
+                text: 'Chicken Dinner baby!',
+                showConfirmButton: false,
+                timer: 3000
+            }).then(() => {
+                level++;
+                resetGame();
+            });
+        }
+    };
+
+    function resetGame() {
+        player.x = 50;
+        player.y = c.height - groundHeight - 80; // Increased size
+        scrollOffset = 0;
+        obstacles = generateObstacles();
+        flag.x = 3 * c.width; // Adjust to 3 screens
+        hearts = 5;
+        gameOver = false;
+        player.invincible = false;
+        player.blinkCounter = 0;
+    }
+
+    let draw = () => {
+        g.clearRect(0, 0, c.width, c.height);
+
+        drawGround();
+        drawPlayer();
+        drawObstacles();
+        drawFlag();
+        drawLevelAndHearts();
+
+        if (!gameOver) {
+            requestAnimationFrame(draw);
+        } else {
+            // Reset the game
+            resetGame();
+            draw();
+        }
+    };
+
+    heroImage.onload = () => {
+        obstacleImages.push(new Image());
+        obstacleImages[0].src = "../images/video-games/mario-brothers/tube.png"; // Update with your tube image URL
+        obstacleImages.push(new Image());
+        obstacleImages[1].src = "../images/video-games/mario-brothers/turtle.png"; // Update with your turtle image URL
+        groundImage.onload = () => {
+            flagImage.onload = () => {
+                draw();
+            };
+        };
+    };
+
+    let gameLoop = () => {
+        updatePlayer();
+        moveTurtles(); // Add this function call
+        checkCollisions();
+        if (!gameOver) {
+            requestAnimationFrame(gameLoop);
+        }
+    };
+
+    gameLoop();
+</script>
+</body>
+</html>
+
