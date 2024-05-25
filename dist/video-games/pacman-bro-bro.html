@@ -93,9 +93,27 @@
     c.width = window.innerWidth;
     c.height = window.innerHeight;
 
+    let heroImage = new Image();
+    heroImage.src = "../images/video-games/sprite-sheets/PC Computer - Shovel Knight Treasure Trove - King Knight.png";
+
+    heroImage.onload = () => {
+        startLevel();
+        draw();
+    };
+
+    heroImage.onerror = () => {
+        console.error("Failed to load hero image.");
+    };
+
     let drawPlayer = () => {
-        g.fillStyle = "#00f";
-        g.fillRect(player.x, player.y, 20, 20);
+        let spriteWidth = 40;  // Width of a single sprite in the sheet
+        let spriteHeight = 40; // Height of a single sprite in the sheet
+        let spriteX = 0; // X position of the sprite in the sheet
+        let spriteY = 0; // Y position of the sprite in the sheet
+
+        // Adjust spriteX and spriteY to point to the correct sprite in the sheet
+        // For this example, let's just use the first sprite (top-left corner)
+        g.drawImage(heroImage, spriteX, spriteY, spriteWidth, spriteHeight, player.x, player.y, spriteWidth, spriteHeight);
     };
 
     let drawFlag = () => {
@@ -237,9 +255,6 @@
             requestAnimationFrame(draw);
         }
     };
-
-    startLevel();
-    draw();
 </script>
 </body>
 </html>
