@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Top-Down Game</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-image: url('https://source.unsplash.com/random/1920x1080/?nature');
+        background-size: cover;
+    }
+    canvas {
+        display: block;
+        margin: auto;
+        background-color: transparent;
+    }
+    #health-bar {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 200px;
+        height: 20px;
+        background-color: #444;
+    }
+    #health {
+        width: 100%;
+        height: 100%;
+        background-color: #0f0;
+    }
+    .swal2-container {
+        z-index: 10000;
+    }
+</style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<div id="health-bar"><div id="health"></div></div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    let c = document.getElementById("canvas"),
+        g = c.getContext("2d"),
+        player = { x: 50, y: 50, speed: 20, health: 100 },
+        flag = { x: 100, y: 100 },
+        bombs = [],
+        level = 1,
+        gameOver = false;
+
+    c.width = window.innerWidth;
+    c.height = window.innerHeight;
+
+    let drawPlayer = () => {
+        g.fillStyle = "#00f";
+        g.fillRect(player.x, player.y, 20, 20);
+    };
+
+    let drawFlag = () => {
+        g.fillStyle = "#0f0";
+        g.fillRect(flag.x, flag.y, 20, 20);
+    };
+
+    let drawBombs = () => {
+        g.fillStyle = "#f00";
+        bombs.forEach(bomb => {
+            g.fillRect(bomb.x, bomb.y, 30, 30);
+        });
+    };
+
+    let movePlayer = (dx, dy) => {
+        if (!gameOver) {
+            player.x += dx * player.speed;
+            player.y += dy * player.speed;
+            checkCollisions();
+        }
+    };
+
+    let moveEnemies = () => {
+        bombs.forEach(bomb => {
+            bomb.x += bomb.dx;
+            bomb.y += bomb.dy;
+
+            if (bomb.x < 0 || bomb.x > c.width) {
+                bomb.dx *= -1;
+            }
+
+            if (bomb.y < 0 || bomb.y > c.height) {
+                bomb.dy *= -1;
+            }
+        });
+    };
+
+    let checkCollisions = () => {
+        if (player.x < 0 || player.x > c.width || player.y < 0 || player.y > c.height) {
+            gameOver = true;
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'You went out of bounds.',
+            });
+        }
+        if (Math.abs(player.x - flag.x) < 20 && Math.abs(player.y - flag.y) < 20) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Winner Winner!',
+                text: 'Chicken Dinner!',
+            }).then(() => {
+                level++;
+                startLevel();
+            });
+        }
+        bombs.forEach(bomb => {
+            if (Math.abs(player.x - bomb.x) < 30 && Math.abs(player.y - bomb.y) < 30) {
+                player.health -= 25;
+                if (player.health <= 0) {
+                    gameOver = true;
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'You hit a bomb.',
+                    });
+                }
+            }
+        });
+    };
+
+    document.addEventListener("keydown", e => {
+        switch (e.keyCode) {
+            case 37:
+                movePlayer(-1, 0); // left
+                break;
+            case 38:
+                movePlayer(0, -1); // up
+                break;
+            case 39:
+                movePlayer(1, 0); // right
+                break;
+            case 40:
+                movePlayer(0, 1); // down
+                break;
+        }
+    });
+
+    let startLevel = () => {
+        player.x = Math.random() * c.width;
+        player.y = Math.random() * c.height;
+        flag.x = Math.random() * c.width;
+        flag.y = Math.random() * c.height;
+        bombs = [];
+        for (let i = 0; i < level * 5; i++) {
+            let dx = Math.random() * 10 - 5;
+            let dy = Math.random() * 10 - 5;
+            bombs.push({ x: Math.random() * c.width, y: Math.random() * c.height, dx, dy });
+        }
+        player.health = 100;
+        gameOver = false;
+    };
+
+    let drawHealthBar = () => {
+        let healthWidth = (player.health / 100) * 200;
+        let healthBar = document.getElementById("health");
+        healthBar.style.width = `${healthWidth}px`;
+    };
+
+    let drawScoreboard = () => {
+        g.fillStyle = "#fff";
+        g.font = "20px Arial";
+        g.fillText(`Level: ${level}`, 10, 30);
+    };
+
+    let draw = () => {
+        g.clearRect(0, 0, c.width, c.height);
+        drawPlayer();
+        drawFlag();
+        drawBombs();
+        moveEnemies();
+        drawHealthBar();
+        drawScoreboard();
+        if (!gameOver) {
+            requestAnimationFrame(draw);
+        }
+    };
+
+    startLevel();
+    draw();
+</script>
+</body>
+</html>
