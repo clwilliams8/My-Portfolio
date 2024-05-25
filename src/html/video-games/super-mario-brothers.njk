@@ -13,15 +13,84 @@
         height: 100%;
         overflow: hidden;
         background-color: #87CEEB;
+        position: relative;
     }
-    canvas {
-        display: block;
-        margin: auto;
-        background-color: transparent;
+    .background {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    .cloud {
+        background-color: #ffffff;
+        border-radius: 50%;
+        position: absolute;
+        animation: moveClouds linear infinite;
+    }
+    .city {
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 30%;
+        justify-content: space-between;
+    }
+    .building {
+        background-color: #8B4513;
+        width: 2%;
+        height: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .light {
+        width: 20%;
+        height: 20%;
+        background-color: #FFFF00;
+        margin: 2px;
+    }
+    @keyframes moveClouds {
+        0% { left: -100%; }
+        100% { left: 100%; }
     }
 </style>
 </head>
 <body>
+    <div class="background">
+        <div class="cloud" id="cloud1" style="top: 20%; left: 10%; width: 150px; height: 100px;"></div>
+        <div class="cloud" id="cloud2" style="top: 30%; left: 30%; width: 100px; height: 60px;"></div>
+        <div class="cloud" id="cloud3" style="top: 10%; left: 60%; width: 120px; height: 80px;"></div>
+        <div class="cloud" id="cloud4" style="top: 25%; left: 80%; width: 130px; height: 70px;"></div>
+        <!-- <div class="city" id="city">
+            <div class="building" style="height: 70%;">
+                <div class="light"></div>
+                <div class="light"></div>
+                <div class="light"></div>
+            </div>
+            <div class="building" style="height: 80%;">
+                <div class="light"></div>
+                <div class="light"></div>
+                <div class="light"></div>
+            </div>
+            <div class="building" style="height: 60%;">
+                <div class="light"></div>
+                <div class="light"></div>
+                <div class="light"></div>
+            </div>
+            <div class="building" style="height: 50%;">
+                <div class="light"></div>
+                <div class="light"></div>
+                <div class="light"></div>
+            </div>
+            <div class="building" style="height: 90%;">
+                <div class="light"></div>
+                <div class="light"></div>
+                <div class="light"></div>
+            </div>
+        </div> -->
+    </div>
 <canvas id="canvas"></canvas>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
@@ -55,6 +124,7 @@
     let gameOver = false;
     let scrollOffset = 0;
     let isScrolling = false;
+    let scrollDirection = 'left';
 
     let heroImage = new Image();
     heroImage.src = "../images/video-games/mario-brothers/mario-bro.png"; // Update with your hero image URL
@@ -182,9 +252,11 @@
 
         if (player.x + player.dx <= c.width * 0.2 && player.dx < 0) {
             isScrolling = true;
+            scrollDirection = 'right';
             scrollOffset += player.dx;
         } else if (player.x + player.dx >= c.width * 0.4 && player.dx > 0) {
             isScrolling = true;
+            scrollDirection = 'left';
             scrollOffset += player.dx;
         } else {
             if (!isCollidingWithTube(player.x + player.dx, player.y)) {
@@ -245,8 +317,8 @@
                 player.y + player.height > obs.y) {
                 if (obs.type === 'tube' && player.dy > 0 &&
                     player.y + player.height - 20 < obs.y) { // Player is above the tube
-                    // Bounce the player upward
-                    player.dy = -25;
+                    player.y = obs.y - player.height;
+                    player.grounded = true;
                 } else if (obs.type === 'turtle' && !player.invincible && player.dy > 0 &&
                     player.y + player.height - 20 < obs.y) { // Player is above the turtle
                     obs.killed = true;
@@ -275,7 +347,7 @@
         });
 
         if (player.x + player.width > flag.x - scrollOffset &&
-            player.y + player.height > flag.y) {
+        player.y + player.height > flag.y) {
             Swal.fire({
                 position: 'center',
                 icon: 'success',
@@ -305,6 +377,7 @@
     let draw = () => {
         g.clearRect(0, 0, c.width, c.height);
 
+        drawBackground(); // Draw clouds and city
         drawGround();
         drawPlayer();
         drawObstacles();
@@ -317,6 +390,38 @@
             // Reset the game
             resetGame();
             draw();
+        }
+    };
+
+    let drawBackground = () => {
+        // Move clouds
+        if (isScrolling && scrollDirection === 'left') {
+            document.querySelectorAll('.cloud').forEach(cloud => {
+                let left = parseFloat(cloud.style.left) || 0;
+                left -= 0.02; // Adjust the speed of cloud movement
+                cloud.style.left = left + '%';
+            });
+        } else if (isScrolling && scrollDirection === 'right') {
+            document.querySelectorAll('.cloud').forEach(cloud => {
+                let left = parseFloat(cloud.style.left) || 0;
+                left += 0.02; // Adjust the speed of cloud movement
+                cloud.style.left = left + '%';
+            });
+        }
+
+        // Move city buildings
+        if (isScrolling && scrollDirection === 'left') {
+            document.querySelectorAll('.building').forEach(building => {
+                let left = parseFloat(building.style.left) || 0;
+                left -= 0.02; // Adjust the speed of building movement
+                building.style.left = left + '%';
+            });
+        } else if (isScrolling && scrollDirection === 'right') {
+            document.querySelectorAll('.building').forEach(building => {
+                let left = parseFloat(building.style.left) || 0;
+                left += 0.02; // Adjust the speed of building movement
+                building.style.left = left + '%';
+            });
         }
     };
 
@@ -345,4 +450,5 @@
 </script>
 </body>
 </html>
+
 
