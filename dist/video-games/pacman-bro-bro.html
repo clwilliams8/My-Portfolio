@@ -22,7 +22,7 @@
     }
     #health-bar {
         position: absolute;
-        bottom: 10px;
+        bottom: 50px;
         left: 50%;
         transform: translateX(-50%);
         width: 200px;
@@ -37,11 +37,49 @@
     .swal2-container {
         z-index: 10000;
     }
+    .d-pad-container {
+        position: fixed;
+        bottom: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 10px;
+    }
+    .arrow-button {
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        color: #333;
+        cursor: pointer;
+    }
+    .arrow-button:hover {
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+    .arrow-button:not(:empty) {
+        display: flex;
+    }
 </style>
 </head>
 <body>
 <canvas id="canvas"></canvas>
 <div id="health-bar"><div id="health"></div></div>
+<div class="d-pad-container">
+    <div class="arrow-button"></div>
+    <div class="arrow-button" id="up">↑</div>
+    <div class="arrow-button"></div>
+    <div class="arrow-button" id="left">←</div>
+    <div class="arrow-button"></div>
+    <div class="arrow-button" id="right">→</div>
+    <div class="arrow-button"></div>
+    <div class="arrow-button" id="down">↓</div>
+    <div class="arrow-button"></div>
+</div>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
     let c = document.getElementById("canvas"),
@@ -99,16 +137,22 @@
         if (player.x < 0 || player.x > c.width || player.y < 0 || player.y > c.height) {
             gameOver = true;
             Swal.fire({
+                position: 'center',
                 icon: 'error',
                 title: 'Oops...',
                 text: 'You went out of bounds.',
+                showConfirmButton: false,
+                timer: 1500
             });
         }
         if (Math.abs(player.x - flag.x) < 20 && Math.abs(player.y - flag.y) < 20) {
             Swal.fire({
+                position: 'center',
                 icon: 'success',
                 title: 'Winner Winner!',
                 text: 'Chicken Dinner!',
+                showConfirmButton: false,
+                timer: 3000
             }).then(() => {
                 level++;
                 startLevel();
@@ -120,9 +164,12 @@
                 if (player.health <= 0) {
                     gameOver = true;
                     Swal.fire({
+                        position: 'center',
                         icon: 'error',
                         title: 'Oops...',
                         text: 'You hit a bomb.',
+                        showConfirmButton: false,
+                        timer: 1500
                     });
                 }
             }
@@ -145,6 +192,11 @@
                 break;
         }
     });
+
+    document.getElementById("up").addEventListener("click", () => movePlayer(0, -1));
+    document.getElementById("left").addEventListener("click", () => movePlayer(-1, 0));
+    document.getElementById("right").addEventListener("click", () => movePlayer(1, 0));
+    document.getElementById("down").addEventListener("click", () => movePlayer(0, 1));
 
     let startLevel = () => {
         player.x = Math.random() * c.width;
