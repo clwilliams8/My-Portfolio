@@ -54,6 +54,11 @@ gulp.task('sass', async function() {
         .pipe(gulp.dest('dist/assets/css'));
 });
 
+gulp.task('css', async function() {
+    return gulp.src('./src/assets/sass/*.css')
+        .pipe(gulp.dest('dist/assets/css'));
+});
+
 // Compile webfonts
 gulp.task('webfonts', async function() {
     return gulp.src('./src/assets/webfonts/*')
@@ -69,7 +74,7 @@ gulp.task('cacheBust', async function() {
             .pipe(gulp.dest('./dist/partials/'))
 });
 
-gulp.task('default', gulp.series('message','copyHtml','imageMin','copyCNAME','scripts','sass','webfonts','cacheBust'));
+gulp.task('default', gulp.series('message','copyHtml','imageMin','copyCNAME','scripts','sass', 'css', 'webfonts','cacheBust'));
 
 gulp.task('watch', function(){
   gulp.watch('./src/html/**', gulp.series('copyHtml'));
