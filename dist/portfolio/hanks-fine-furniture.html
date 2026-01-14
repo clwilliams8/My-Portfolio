@@ -62,10 +62,8 @@
 
                     <h2>About The Project</h2>
                     <!-- About us page of company here -->
-                    <p><strong>Mission:</strong> Get a new website built before their current <a href="https://helpx.adobe.com/muse/kb/adobe-muse-end-of-service.html" target="_blank">Adobe Muse website expires</a>. Also build custom e-commerece solution
-                        so users can place orders on the website. The e-commerece solution uses the Storis API. All of their furniture inventory exist in this platform. We build the products on this site to sync with the products in Storis as well as
-                        adding and subtracting from inventory when orders are placed.</p>
-                    <p><strong>Technologies Used:</strong> Laravel, Tailwind CSS, Storis eBridge API, Google Maps API, Google Geocode API</p>
+                    <p><strong>Mission:</strong> Deliver a full-scale e-commerce platform for this Top 100 Independent Furniture Retailer before their Adobe Muse website reached end-of-life. The engagement required building a custom e-commerce solution integrated with the client's enterprise inventory management system, enabling real-time product synchronization, inventory tracking, and seamless order processing across 18 retail locations.</p>
+                    <p><strong>Technologies Used:</strong> Laravel (PHP Backend Framework), Tailwind CSS (Utility-First Styling), Storis eBridge API (Enterprise Inventory Integration), Google Maps API (Store Locator Display), Google Geocode API (Address-to-Coordinate Conversion), MySQL (Database), Haversine Formula (Proximity Search Algorithm).</p>
                     <p><strong>Links</strong>
                         <ul style="margin-left: 28px; margin-top: -20px;">
                             <li style="padding-bottom: 7px;"><a href="https://laravel.com/" target="_blank">Laravel docs</a></li>
@@ -76,16 +74,17 @@
                         </ul>
                     </p>
                     <p><strong>Before: </strong><a target="_blank" href="https://web.archive.org/web/20190324134305/https://hanksfurniture.com/">From the Web Archives</a></p>
-                    <p><strong>After: </strong><a target="_blank" href="https://hanksfurniture.com/">Visit new live website</a></p>
+                    <p><strong>After: </strong><a target="_blank" href="https://web.archive.org/web/20240131162830/https://hanksfurniture.com/">From the Web Archives</a> (Note: The site has since been rebuilt; this archive link shows my Laravel build)</p>
 
                     <h2>Summary</h2>
                     <!-- My testimonial here -->
-                    <p>This project was very fun. The website is very clean and easy to use. The e-commerce solution is very easy to use and turned out to be a great success for the client. They
-                        did $70,000 in sales on the first month after launch through the website. So their ROI for the work we did was very high. We built tools on the backend of the website to give them to ability to do all the things
-                        they need to do so that the website would require less maintenance for the future. I created the Location Search page with a sidebar to display search results and the main section is a google map. I created this using
-                        Google Geocoding API on the backend to automatically save the latitude and longitude of the address they enter for their store's location. Then when a search is made on the frontend, it searches the database for any location within
-                        100 miles of the search using the <a href="https://www.geeksforgeeks.org/haversine-formula-to-find-distance-between-two-points-on-a-sphere/" target="_blank">Haversine Forumla</a>. At first I implemented this operation using PHP,
-                        however, I discovered a way to do it with an SQL query that was much faster.</p>
+                    <p>This platform delivered immediate, measurable business impact—generating $70,000 in sales during the first month after launch and establishing a strong ROI for the client's technology investment.</p>
+
+                    <p>The core technical challenge involved architecting a bidirectional integration with the Storis eBridge API, the client's enterprise inventory management platform. This integration enables real-time product catalog synchronization, automatic inventory adjustments when orders are placed, and seamless data consistency across their 18 physical retail locations and the e-commerce storefront.</p>
+
+                    <p>A notable feature is the geolocation-enabled store finder, which I implemented using the Google Geocoding API for address-to-coordinate conversion on the backend. Customer proximity searches leverage the <a href="https://www.geeksforgeeks.org/haversine-formula-to-find-distance-between-two-points-on-a-sphere/" target="_blank">Haversine formula</a> to calculate great-circle distances between coordinates. I initially implemented this algorithm in PHP, then optimized performance by refactoring the calculation into a raw SQL query—significantly reducing response times for location searches within a 100-mile radius.</p>
+
+                    <p>The administrative backend includes comprehensive tooling that empowers the client's team to manage content, products, and promotions independently—reducing ongoing maintenance overhead and ensuring long-term platform sustainability.</p>
 
                 </section>
             </div>
