@@ -38,11 +38,9 @@
 
                     <h2>About The Project</h2>
                     <!-- About us page of company here -->
-                    <p><strong>Mission:</strong> Be Pro Be Proud is an organization dedicated to assisting students nationwide in finding suitable educational opportunities and future employment. Through sponsorships from local companies, universities, and governments, they facilitate connections between students and potential schools or jobs. One of their key initiatives involves a mobile truck that visits high schools, showcasing various professions to students. At these events, students are encouraged to join the movement by filling out a form online that captures the students interest and aspirations as well as companies or colleges they are interested in. Through the same portal the students' submission is captured, we build a tool for sponsors to login and view the students submissions and contact them with the students permission.. Additionally, we integrated the Twilio Text Message API, enabling marketing messages to be sent to students who have joined the movement.<br>
-                        <br>When the client approached us, their primary concern was scalability. Previously, each state or province that signed up for their own Be Pro Be Proud website would result in an entirely new WordPress application being built. This approach led to inconsistencies and differences in database structures, making it challenging for the client to manage multiple administrators across different states. To address this, we developed a new multi-tenant application for the client.<br><br>
-                        Our solution involved creating a single application and database that could support an unlimited number of state-specific sites. By utilizing different domains that point to the same application, and scoping the data within the application based on state ID, we achieved a unified and scalable platform. This approach empowered the client to rapidly expand and maintain consistency as they onboarded more states for new websites.
-                        </p>
-                    <p><strong>Technologies Used:</strong> Laravel, Tailwind CSS, Google Maps API, Google Geocode API, Multi-tenant application architecture</p>
+                    <p><strong>Mission:</strong> Architect a scalable multi-tenant platform for this national workforce development initiative that connects students with skilled trade career opportunities. The client's critical pain point was scalability: each new state chapter required a separate WordPress installation, creating maintenance nightmares with divergent databases, inconsistent plugins, and fragmented administration across states.</p>
+                    <p>The solution required building a unified platform supporting unlimited state-specific sites from a single codebase and database, with data isolation achieved through state-scoped queries. Additional requirements included a sponsor portal enabling employers and educational institutions to view and contact interested students, plus Twilio SMS integration for marketing communications to enrolled participants.</p>
+                    <p><strong>Technologies Used:</strong> Laravel (PHP Backend Framework), Tailwind CSS (Utility-First Styling), Multi-Tenant Architecture (State-Scoped Data Isolation), Twilio API (SMS Marketing Integration), Google Maps API (Location Services), Google Geocode API (Address Processing), MySQL (Database), Sponsor Portal System.</p>
                     <p><strong>Links</strong>
                         <ul style="margin-left: 28px; margin-top: -20px;">
                             <li style="padding-bottom: 7px;"><a href="https://laravel.com/" target="_blank">Laravel docs</a></li>
@@ -53,12 +51,12 @@
                         </ul>
                     </p>
                     <p><strong>Before: </strong><a target="_blank" href="https://web.archive.org/web/20201126132353/https://www.beprobeproud.org/">From the Web Archives</a></p>
-                    <p><strong>After: </strong><a target="_blank" href="https://www.beprobeproud.org/">Visit new live website</a></p>
+                    <p><strong>After: </strong><a target="_blank" href="https://web.archive.org/web/20230207103446/https://beprobeproud.org/">From the Web Archives</a> (Note: The client later transitioned to a new software vendor; I assisted with the vendor onboarding and knowledge transfer. This archive link shows my multi-tenant Laravel build)</p>
 
                     <h2>Summary</h2>
                     <!-- My testimonial here -->
-                    <p>This project marked a significant milestone for me as it was the first time I undertook the development of a multi-tenant application. Through this architectural approach, a single instance of the application is capable of serving running all their different state websites under one roof instead of starting a new Wordpress build everytime, which then gets out of sync with plugins, content, and frontend themes. Multi-tenancy was a perfect solution for their use case. In fact, for this particular project, we built two separate multi-tenant applications. The first one is the Main Be Pro State Website application, which currently includes the following websites:
-                    </p>
+                    <p>This project represented a significant architectural achievement: my first multi-tenant application implementation. The multi-tenant pattern proved ideal for the client's use case, eliminating the maintenance burden of managing separate WordPress installations that inevitably drift out of sync with plugins, themes, and database schemas.</p>
+                    <p>The engagement actually required building two interconnected multi-tenant applications. The first is the main Be Pro state website platform, currently serving:</p>
                     <ul style="margin-left: 28px; margin-top: -20px;">
                         <li style="padding-bottom: 7px;"><a href="https://www.beprobeproud.org/" target="_blank">Be Pro Be Proud: Main Hub</a></li>
                         <li style="padding-bottom: 7px;"><a href="http://beprobeproudar.org/" target="_blank">Be Pro Be Proud: Arkansas</a></li>
@@ -67,7 +65,7 @@
                         <li style="padding-bottom: 7px;"><a href="https://www.beprobeproudtn.org/" target="_blank">Be Pro Be Proud: Tennessee</a></li>
                         <li style="padding-bottom: 7px;"><a href="https://www.beprobeproudnc.org/" target="_blank">Be Pro Be Proud: North Carolina</a></li>
                     </ul>
-                    <p>The other multi-tenant application was the Join The Movement application which is where students would fill out their form to be shared with schools and employors:</p>
+                    <p>The second multi-tenant application powers the "Join The Movement" student enrollment system, where students submit their interests and career aspirations to be matched with sponsors:</p>
                     <ul style="margin-left: 28px; margin-top: -20px;">
                         <li style="padding-bottom: 7px;"><a href="https://join.beprobeproud.org/" target="_blank">Join The Movement: Main Hub</a></li>
                         <li style="padding-bottom: 7px;"><a href="http://join.ar.beprobeproud.org/" target="_blank">Join The Movement: Arkansas</a></li>
