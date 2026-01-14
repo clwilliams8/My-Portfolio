@@ -55,26 +55,15 @@
 
                     <h2>About Sunnybrook Software Company</h2>
                     <p>Sunnybrook is a modern TMS software. It's a cloud-based software that is designed to help 3PL providers and brokers get shipments through the entire lifecycle.
-                        It handles Shipments, Customers, Carriers, Factors, Locations, and Accounting as well as integrating with Quickbooks, Marcopoint and more.</p>
+                        It handles Shipments, Customers, Carriers, Locations, and Accounting as well as integrating with Quickbooks, Macropoint and more.</p>
 
                     <hr class="major" />
 
                     <h2>About The Project</h2>
                     <!-- About us page of company here -->
-                    <p><strong>Mission:</strong> The company was using another Freight Broker TMS software on the market
-                         called Descartes Aljex. The software was good enough for the company to grow to over $50 million
-                          in revenue in only 3 and a half years, handling over 300 shipments daily, but the software
-                          lacked some features and integrations that the company needed to continue their growth
-                          and provide for their customer and carrier base. They wanted to build their own
-                          TMS software not only to reach their own company's goals but also to sell the software
-                          to the other 22,000 brokers across the country. If you look at other TMS software that
-                          is currently on the market, most are old and clunky and lack many integrations with other systems.
-                          We built the software using the most modern web technologies with intuitive user interfaces with
-                          user experience in mind. We wanted to accomplish all the things needed for all the different
-                          roles in the company: Capacity, Sales,Accounting, and more... while any extra clicks needed to
-                          perform the tasks users do on a daily basis. Also, in order to migrate existing broker data to the
-                          new system during the tenant onboarding process, the client needed a full REST API to manage all content.</p>
-                    <p><strong>Technologies Used:</strong> Laravel, Tenancy For Laravel, Vue.js, Bootstrap 5, Chart.js, Laravel Media Library, DomPDF, Meilisearch, Google Maps API, Google Geocoder API, Google Timezones API, Azure Blob Storage, Azure Active Directory, Azure Virtual Machines, Azure SQL Server Cloud, Postman</p>
+                    <p><strong>Mission:</strong> Build a modern, licensable Transportation Management System (TMS) from the ground up. The client had scaled to $50M+ revenue handling 300+ daily shipments on legacy TMS software, but outgrew its capabilities. The vision: create a best-in-class SaaS platform not only for internal operations but to license to the 22,000+ freight brokers across the country—addressing a market dominated by outdated, poorly-integrated solutions.</p>
+                    <p>The platform required role-specific workflows for Capacity, Sales, and Accounting teams, with an emphasis on minimizing clicks for high-frequency daily tasks. A comprehensive REST API was essential for migrating existing broker data during tenant onboarding.</p>
+                    <p><strong>Technologies Used:</strong> Laravel (PHP Backend Framework), Tenancy For Laravel (Multi-Tenant SaaS Architecture), Vue.js (Reactive Frontend), Bootstrap 5 (UI Components), Chart.js (Analytics Dashboards), Laravel Media Library (Document Management), DomPDF (Invoice/PDF Generation), Meilisearch (Sub-100ms Full-Text Search), Google Maps API (Shipment Tracking Display), Google Geocoder API (Address Processing), Google Timezones API (Multi-Timezone Support), Macropoint (Real-Time GPS Tracking), Azure Blob Storage (Document Storage), Azure Active Directory (SSO Authentication), Azure Virtual Machines (Cloud Infrastructure), Azure SQL Server (Cloud Database), QuickBooks API (Accounting Integration).</p>
                     <p><strong>Links</strong>
                         <ul style="margin-left: 28px; margin-top: -20px;">
                             <li style="padding-bottom: 7px;"><a href="https://laravel.com/" target="_blank">Laravel docs</a></li>
@@ -90,8 +79,6 @@
                             <li style="padding-bottom: 7px;"><a href="https://developers.google.com/maps/documentation/timezone/overview" target="_blank">Google Timezones API</a></li>
                             <li style="padding-bottom: 7px;"><a href="https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction" target="_blank">Azure Blob Storage</a></li>
                             <li style="padding-bottom: 7px;"><a href="https://learn.microsoft.com/en-us/entra/identity/" target="_blank">Azure Active Directory</a></li>
-                            <li style="padding-bottom: 7px;"><a href="https://learn.microsoft.com/en-us/entra/identity/" target="_blank">Azure Active Directory</a></li>
-                            <li style="padding-bottom: 7px;"><a href="https://azure.microsoft.com/en-us/products/virtual-machines" target="_blank">Azure Virtual Machines</a></li>
                             <li style="padding-bottom: 7px;"><a href="https://azure.microsoft.com/en-us/products/virtual-machines" target="_blank">Azure Virtual Machines</a></li>
                             <li style="padding-bottom: 7px;"><a href="https://azure.microsoft.com/en-us/products/azure-sql" target="_blank">Azure SQL Server Cloud</a></li>
                             <li style="padding-bottom: 7px;"><a href="https://www.postman.com/" target="_blank">Postman</a></li>
@@ -100,36 +87,23 @@
 
                     <h2>Summary</h2>
                     <!-- My testimonial here -->
-                    <p>I was on the project with a few other developers over the year and a half that I worked on the project. At times, I was the only developer on the project.
-                        During the course of the project, there was two lead developers that managed the project. I helped the 2nd lead onboard to the project.
-                        I was responsible for delivering the weekly sprints and making sure the project was on track.
-                        I wrote about 80% of the code on the project. When I first came onboard only about a month after the project began, we were writing all the migration files to structure the initial database,
-                        creating the inital Eloquent models and relationships. I created the Shipment, Customer, Carrier, Factors, and Location forms on the frontend which were the core models of the application.
-                        I created the Shipment Status Lifecycle, which is a series of over 20 status that a Shipment can be in based on if the Shipment had been tendered, accepted, activated,
-                        covered by carrier, dispatched, en route to pickup, to delivery, to accounting review, to payment processing, to completed.
-                        I built the accounting workflow which gave accounting users the ability to upload, review, and approve documents.
-                        The accounting system integrated with Quickbooks and automatically created invoices and payments based on the approved documents.
-                        I created a reference table to the documents and were they were located in Azure Blob Storage.
-                        I created PDF templates of the Sunnybrook invoices that were sent to Customers, and the Carrier Rate Confirmation and Carrier Invoices that were sent to Carriers using DomPDF.
-                        I then build out Tenancy For Laravel which gave us the ability to license the software out to additional brokers with their own subdomain.
-                        I created the REST API that was used to migrate the data from the old systems to the new system.
-                        I created the Google Maps API integration and Macropoint integrations so that we could track the shipments
-                        and see where the truck was at in real time on a google map and which stop they were en route to.
-                        I also created a Shipment Status notification system that Customers and Users could opt into
-                        to receive email updates of the status of their Shipments. The Customer and Users assigned to
-                        those shipments could configure which status email updates they actually wanted and could opt in and out at anytime.
-                        The emails templates were very modern and looked nice.
-                        I also implemented Meilisearch and connected it to our search bar could search through 100s of
-                        thousands and even millions of records in less than 100ms because the models would all be indexed on save or creation.
-                        I created the Azure Active Directory integration which gave us the ability to have Single Sign On
-                        for all the users in the company. This way users didn't have to remember a password and it was much more secure.
-                        New employees didn't have to create an account, it would automatically be created for them.
-                        I created the Azure Virtual Machines and Azure SQL Server Cloud in our production and staging environments.
-                        Towards the end of the project, I created the Dashboard page which used Chart.JS to chart out
-                        different reports for users to see what was going on for the day, the week, the month, the quarter,
-                        the current calendar year, or any custom date range. Each report on the dashboard had it's own date selector, or you could use a global date selector
-                        at the top of the page to update all the reports at once. I built reports for Margin vs Volumn, Newly Created Shipments, Top Customer Accounts and more.<br><br>
-                    </p>
+                    <p>Over 18 months on this project, I served as a core developer—writing approximately 80% of the codebase, delivering weekly sprints, and onboarding the second technical lead mid-project. My contributions spanned the full stack, from database architecture to frontend implementation.</p>
+
+                    <p><strong>Core Platform Architecture:</strong> Designed database migrations and Eloquent models/relationships from project inception. Built the primary CRUD interfaces for Shipments, Customers, Carriers, and Locations—the foundational entities of any TMS.</p>
+
+                    <p><strong>Shipment Lifecycle Engine:</strong> Implemented a 20+ status state machine managing shipments from tender through acceptance, carrier coverage, dispatch, pickup, delivery, accounting review, payment processing, and completion.</p>
+
+                    <p><strong>Accounting & Document Workflow:</strong> Built the complete accounting pipeline with document upload, review, and approval workflows. Integrated with QuickBooks API for automated invoice and payment creation. Implemented Azure Blob Storage for document persistence with DomPDF-generated invoices, rate confirmations, and carrier documents.</p>
+
+                    <p><strong>Multi-Tenant SaaS Architecture:</strong> Implemented Tenancy For Laravel enabling the platform to be licensed to additional brokers, each with isolated data on their own subdomain. Built the REST API supporting bulk data migration during tenant onboarding.</p>
+
+                    <p><strong>Real-Time Tracking & Notifications:</strong> Integrated Google Maps API and Macropoint for live GPS tracking visualization showing truck locations and route progress. Built a configurable notification system allowing customers and users to subscribe to specific shipment status updates via professionally-designed email templates.</p>
+
+                    <p><strong>Search & Authentication Infrastructure:</strong> Implemented Meilisearch with automatic model indexing, achieving sub-100ms search across millions of records. Configured Azure Active Directory integration for enterprise SSO with automatic account provisioning for new employees.</p>
+
+                    <p><strong>Analytics Dashboard:</strong> Developed Chart.js-powered reporting dashboard with flexible date filtering (daily, weekly, monthly, quarterly, annual, or custom ranges). Reports include Margin vs. Volume analysis, shipment creation trends, and top customer account metrics.</p>
+
+                    <p><strong>Cloud Infrastructure:</strong> Provisioned and configured Azure Virtual Machines and Azure SQL Server for production and staging environments.</p>
 
                 </section>
             </div>
