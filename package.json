@@ -2,7 +2,7 @@
   "name": "coltonlwilliams",
   "version": "1.0.0",
   "description": "This is my portfolio website so folks can check out my web projects",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
     "deploy": "gh-pages -d dist",
     "nunjucks": "node nunjucks.js"
@@ -22,19 +22,17 @@
     "node": ">=18.0.0"
   },
   "devDependencies": {
-    "gulp": "^4.0.2",
+    "gulp": "^5.0.1",
     "gulp-concat": "^2.6.1",
-    "gulp-imagemin": "^7.1.0",
-    "gulp-nunjucks": "^5.0.2",
-    "gulp-nunjucks-render": "^2.2.3",
-    "gulp-replace": "^1.0.0",
-    "gulp-sass": "^5.1.0",
-    "gulp-uglify": "^3.0.2",
-    "nunjucks": "^3.2.1",
-    "sass": "^1.77.0"
+    "gulp-imagemin": "^9.2.0",
+    "gulp-nunjucks": "^6.1.0",
+    "gulp-replace": "^1.1.4",
+    "gulp-sass": "^6.0.1",
+    "gulp-terser": "^2.1.0",
+    "nunjucks": "^3.2.4",
+    "sass": "^1.97.0"
   },
   "dependencies": {
-    "gh-pages": "^6.1.1",
-    "nanogallery2": "^2.4.2"
+    "gh-pages": "^6.3.0"
   }
 }

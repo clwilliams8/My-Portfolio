@@ -1,47 +1,50 @@
-const gulp = require('gulp');
-const nunjucks = require('gulp-nunjucks');
-const imagemin = require('gulp-imagemin');
-const concat = require('gulp-concat');
-const uglify = require('gulp-uglify');
-const sass = require('gulp-sass')(require('sass'));
-const replace = require('gulp-replace');
+import gulp from 'gulp';
+import { nunjucksCompile } from 'gulp-nunjucks';
+import imagemin from 'gulp-imagemin';
+import concat from 'gulp-concat';
+import terser from 'gulp-terser';
+import gulpSass from 'gulp-sass';
+import * as sass from 'sass';
+import replace from 'gulp-replace';
+
+const sassCompiler = gulpSass(sass);
 
 /*
  --TOP LEVEL FUNCTIONS
     gulp.task - Define task
     gulp.src - Point to the files to use
-    gulp.dest - point to the fodler to output
+    gulp.dest - point to the folder to output
     gulp.watch - Watch files and folders for changes
 */
 
 // Logs Message
-gulp.task('message', function(done){
+function message(done) {
     console.log('Gulp is running...');
     done();
-});
+}
 
 // Compile .njk files into html
-gulp.task('copyHtml', function(){
+function copyHtml() {
     return gulp.src('./src/html/**')
-            .pipe(nunjucks.compile())
-            .pipe(gulp.dest('dist'));
-});
+        .pipe(nunjucksCompile())
+        .pipe(gulp.dest('dist'));
+}
 
 // Compile CNAME file
-gulp.task('copyCNAME', function(){
+function copyCNAME() {
     return gulp.src('CNAME')
-            .pipe(gulp.dest('dist'));
-});
+        .pipe(gulp.dest('dist'));
+}
 
-// Optimize Images
-gulp.task('imageMin', function() {
-    return gulp.src('./src/assets/images/**')
+// Copy Images (with binary encoding for proper handling)
+function optimizeImages() {
+    return gulp.src('./src/assets/images/**', { encoding: false })
         .pipe(imagemin())
         .pipe(gulp.dest('dist/images'));
-});
+}
 
 // Scripts - order matters: jQuery must load first
-gulp.task('scripts', function() {
+function scripts() {
     return gulp.src([
         './src/assets/js/jquery.min.js',
         './src/assets/js/browser.min.js',
@@ -51,43 +54,61 @@ gulp.task('scripts', function() {
         './src/assets/js/nanogallery2.js'
     ])
         .pipe(concat('main.js'))
+        .pipe(terser())
         .pipe(gulp.dest('dist/assets/js'));
-});
+}
 
 // Compile Sass
-gulp.task('sass', function() {
+function compileSass() {
     return gulp.src('./src/assets/sass/*.scss')
-        .pipe(sass().on('error', sass.logError))
+        .pipe(sassCompiler().on('error', sassCompiler.logError))
         .pipe(gulp.dest('dist/assets/css'));
-});
+}
 
-gulp.task('css', function() {
+// Copy CSS files
+function copyCss() {
     return gulp.src('./src/assets/sass/*.css')
         .pipe(gulp.dest('dist/assets/css'));
-});
+}
 
-// Compile webfonts
-gulp.task('webfonts', function() {
-    return gulp.src('./src/assets/webfonts/*')
+// Copy webfonts (with binary encoding for proper handling)
+function webfonts() {
+    return gulp.src('./src/assets/webfonts/*', { encoding: false })
         .pipe(gulp.dest('dist/assets/webfonts'));
-});
+}
 
 // Cache busting task
-gulp.task('cacheBust', function() {
+function cacheBust() {
     const cbString = new Date().getTime();
-    console.log(cbString);
+    console.log('Cache bust:', cbString);
     return gulp.src(['./dist/partials/*'])
-            .pipe(replace(/v=\d+/g, 'v=' + cbString))
-            .pipe(gulp.dest('./dist/partials/'));
-});
+        .pipe(replace(/v=\d+/g, 'v=' + cbString))
+        .pipe(gulp.dest('./dist/partials/'));
+}
 
-gulp.task('default', gulp.series('message','copyHtml','imageMin','copyCNAME','scripts','sass', 'css', 'webfonts','cacheBust'));
+// Watch task
+function watchFiles() {
+    gulp.watch('./src/html/**', copyHtml);
+    gulp.watch('CNAME', copyCNAME);
+    gulp.watch('./src/assets/js/*', scripts);
+    gulp.watch('./src/assets/images/**', optimizeImages);
+    gulp.watch('./src/assets/sass/*.scss', compileSass);
+    gulp.watch('./src/assets/webfonts/*', webfonts);
+}
 
-gulp.task('watch', function(){
-  gulp.watch('./src/html/**', gulp.series('copyHtml'));
-  gulp.watch('CNAME', gulp.series('copyCNAME'));
-  gulp.watch('./src/assets/js/*', gulp.series('scripts'));
-  gulp.watch('./src/assets/images/**', gulp.series('imageMin'));
-  gulp.watch('./src/assets/sass/*.scss', gulp.series('sass'));
-  gulp.watch('./src/assets/webfonts/*', gulp.series('webfonts'));
-});
+// Define tasks
+const build = gulp.series(
+    message,
+    copyHtml,
+    optimizeImages,
+    copyCNAME,
+    scripts,
+    compileSass,
+    copyCss,
+    webfonts,
+    cacheBust
+);
+
+// Export tasks
+export default build;
+export { watchFiles as watch };
