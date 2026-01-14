@@ -36,8 +36,8 @@
 
                                     <h2>About The Project</h2>
                                         <!-- About us page of company here -->
-                                        <p><strong>Mission:</strong> Create a new CMS that is more user friendly for the admin user. Create a better user flow on frontend and a new nice design</p>
-                                        <p><strong>Technologies Used:</strong> FLEX360 CMS</p>
+                                        <p><strong>Mission:</strong> Deliver a comprehensive website redesign featuring an intuitive content management system, enhanced frontend user experience, and custom tournament management functionality for this established marine manufacturer.</p>
+                                        <p><strong>Technologies Used:</strong> FLEX360 CMS (Laravel-based Platform), PHP (Backend Development), MySQL (Database), RESTful Routing (Frontend Architecture), DateTime Processing (Tournament Scheduling).</p>
                                         <p><strong>Links</strong>
                                             <ul style="margin-left: 28px; margin-top: -20px;">
                                                 <li style="padding-bottom: 7px;"><a href="https://github.com/flex360/pilot" target="_blank">FLEX360 CMS</a></li>
@@ -67,22 +67,17 @@
                                     <h2>Summary</h2>
                                     <!-- My testimonial here -->
 
-                                        <p>
-                                            My job on this project was to create the backend modules for the admin user
-                                            to be able to <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete" target="_blank">CRUD</a> 
-                                            (create, read, update, delete) any models used in the frontend of the application.
-                                        </p>
+                                        <p>As the backend developer on this project, I architected and implemented the CMS modules enabling administrators to perform full <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete" target="_blank">CRUD</a> (Create, Read, Update, Delete) operations on all content models. Beyond integrating standard Pages and News modules, I engineered a custom Tournaments module featuring <a href="https://www.php.net/manual/en/class.datetime.php" target="_blank">DateTime</a>-based scheduling logic that automatically categorizes events as upcoming or past based on current date comparison.</p>
 
-                                        <p>This client used our standard Pages module and News module. I custom made 
-                                            a Tournaments module, which was for a database model called a "tournament".
-                                            The admin can set a beginning and ending <a href="https://www.php.net/manual/en/class.datetime.php" target="_blank">DateTime</a>
-                                            for each tournament they create. Then I created frontend routes:<br>
+                                        <p>The frontend implementation includes a RESTful route structure providing intuitive navigation:<br>
                                             <ul>
-                                                <li>/tournaments/upcoming  -- list view of all upcoming tournaments</li>
-                                                <li>/tournaments/past -- list view of all past tournaments</li>
-                                                <li>/tournaments/{tournament}/{slug} -- detail view of an individual tournament displaying times, winners, photo galleries, etc.</li>
+                                                <li><code>/tournaments/upcoming</code> — Dynamically filtered list of future tournaments</li>
+                                                <li><code>/tournaments/past</code> — Archive of completed tournament events</li>
+                                                <li><code>/tournaments/{tournament}/{slug}</code> — Individual tournament detail pages featuring schedules, winners, and photo galleries</li>
                                             </ul>
                                         </p>
+
+                                        <p>This project demonstrates my ability to translate business requirements into scalable database models, implement time-based content logic, and deliver user-friendly administrative interfaces that empower non-technical staff to manage complex content independently.</p>
 
                                 </section>
 						</div>
