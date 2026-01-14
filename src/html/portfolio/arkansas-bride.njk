@@ -36,8 +36,8 @@
 
                                     <h2>About The Project</h2>
                                         <!-- About us page of company here -->
-                                        <p><strong>Mission:</strong> Use a more modern mobile first design since most users are coming to the site via mobile device, and create a system for advertisers to update their listings. </p>
-                                        <p><strong>Technologies Used:</strong> Laravel's Notification system, Tailwindcss</p>
+                                        <p><strong>Mission:</strong> Deliver a mobile-first platform redesign for Arkansas's premier bridal publication, implementing a self-service vendor portal that automates the listing update workflow previously handled manually via phone and email—supporting 800+ wedding professionals and integrating with print publication processes.</p>
+                                        <p><strong>Technologies Used:</strong> Laravel (PHP Backend Framework), Laravel Notifications (Automated Email Workflows), Laravel Authentication (Passwordless Login System), Tailwind CSS (Utility-First Styling), Revision Control System, MySQL (Database), Mobile-First Responsive Design.</p>
                                         <p><strong>Links</strong>
                                             <ul style="margin-left: 28px; margin-top: -20px;">
                                                 <li style="padding-bottom: 7px;"><a href="https://laravel.com/docs/7.x/notifications" target="_blank">Laravel Notifications</a></li>
@@ -46,7 +46,7 @@
                                         </p>
 
                                         <p><strong>Before: </strong><a target="_blank" href="https://web.archive.org/web/20190327131256/https://www.arkansasbride.com/">From the Web Archives</a></p>
-                                        <p><strong>After: </strong><a target="_blank" href="http://www.arkansasbride.com/">Visit new live website</a></p>
+                                        <p><strong>After: </strong><a target="_blank" href="https://web.archive.org/web/20230606125244/https://www.arkansasbride.com/">From the Web Archives</a> (Note: The site has since been rebuilt in WordPress; this archive link shows my Laravel build)</p>
 
                                     <!-- <h2>Gallery</h2> -->
                                     <!-- Image gallery here -->
@@ -69,25 +69,17 @@
 
                                     <h2>Summary</h2>
                                     <!-- My testimonial here -->
-                                        <p>This was the first industry project I did almost 100% solo.
-                                            Before this project, our team used Bootstrap for the frontend design, but we wanted to try to Tailwindcss out because it is a utility first css framework.
-                                        <p>
+                                        <p>This was my first major industry project executed nearly independently, and it marked our team's transition from Bootstrap to Tailwind CSS as our frontend framework. The centerpiece deliverable was a sophisticated vendor self-service portal replacing a manual phone/email workflow for 800+ wedding professionals.</p>
 
-                                        <p>Before this upgrade, the Arkansas Bride team would update the Vendor listings manually as request come to them via email or telephone call from a vendor.
-                                            In this project, we built a system that let the vendors update their listings from the website. We did it by using Laravel's built in <a href="https://laravel.com/docs/7.x/authentication" target="_blank">Authentication class</a>,
-                                            and created a new user model called a Vendor. This Vendor class used the <a href="https://laravel.com/docs/7.x/notifications#using-the-notifiable-trait" target="_blank">Notifiable trait</a>, which allows us to setup custom events that fire off certain Notifications to the Vendors email. 
-                                        </p>
+                                        <p><strong>Key System Features:</strong></p>
+                                        <ul>
+                                            <li><strong>Passwordless Authentication:</strong> Vendors request secure, time-limited login links—eliminating password management friction while maintaining security through server-validated, expiring parameters.</li>
+                                            <li><strong>Revision-Based Workflow:</strong> Listing updates are saved as revisions rather than immediately publishing. The editorial team receives automated notifications via Laravel's <a href="https://laravel.com/docs/7.x/notifications#using-the-notifiable-trait" target="_blank">Notification system</a> to review submissions for quality and accuracy.</li>
+                                            <li><strong>Approval Pipeline:</strong> Editors approve or reject revisions through an intuitive admin interface. Approved changes automatically propagate to production, triggering confirmation notifications to vendors.</li>
+                                            <li><strong>Print Integration:</strong> The same vendor data powers both the website and the bi-annual print magazine, ensuring consistency across digital and physical publications.</li>
+                                        </ul>
 
-                                        <p>So in simple terms, a Vendor would request a login link that required no password. There was about 800 vendors in total and we wanted the process to be as simple as possible for them. So the login link didn't required
-                                            a password. Instead it has special parameters that our server could read and each login link requested would expire after a certain amount of time. Once inside the admin, the vendor could update their listings data. On save,
-                                            the listing would be copied as a "Revision", and members of the Arkansas Bride team would be Notified by Laravel's Notification system. The Bride team then reviews the revision for typos and can approve or reject the changes.
-                                            If they approved the changes, the revision in the database would have all its data copied into the real listing, and then the revision would be deleted. Their live production data is fully updated, so we send the Vendor another 
-                                            notication letting them know that their Vendor Listing is updated live on the website and will be published in the print magazine. The same data from the website listings is used in the vendors listing in the magazine. 
-                                        </p>
-
-                                        <p>This was quite a challenge for me to get all these moving parts hooked up correctly, and lots of testing was needed to make sure the system would work at a production scale with 100s of folks updating their info automatically rather than over the phone.
-                                            But we got it done! And the new Vendor Listing design looks much better I think! It was a super fun project.
-                                        </p>
+                                        <p>This project required architecting a complex multi-stakeholder workflow with extensive edge case handling and thorough testing to ensure reliable operation at scale—transforming a manual process into a fully automated, self-service system.</p>
                                     
                                 </section>
 						</div>
