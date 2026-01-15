@@ -45,3 +45,370 @@ a.btn-blue:hover  {
 .block {
     display: block  !important;
 }
+
+/* ============================================
+   INSET SIDEBAR EFFECT
+   Dark sidebar with inset main content area
+   Blue + Gold/Orange complementary color scheme
+   ============================================ */
+
+:root {
+    --primary-dark: #0a1628;
+    --primary-dark-2: #0d1e33;
+    --primary-blue: #1a5276;
+    --accent-blue: #2e86c1;
+    --light-blue: #5dade2;
+    --gray-light: #f4f6f9;
+    --sidebar-width: 26em;
+    /* New accent color - Golden Orange (complementary to blue) */
+    --accent-gold: #f59e0b;
+    --accent-gold-hover: #fbbf24;
+    --accent-gold-dark: #d97706;
+}
+
+/* ============================================
+   ACCENT COLOR OVERRIDES (Coral -> Gold)
+   ============================================ */
+
+/* Links */
+a {
+    color: var(--accent-gold);
+}
+
+a:hover {
+    border-bottom-color: var(--accent-gold);
+    color: var(--accent-gold-dark) !important;
+}
+
+/* Header underline */
+#header {
+    border-bottom-color: var(--accent-gold);
+}
+
+/* Section headers */
+header.major > :last-child {
+    border-bottom-color: var(--accent-gold);
+}
+
+/* Buttons */
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button,
+.button {
+    box-shadow: inset 0 0 0 2px var(--accent-gold);
+    color: var(--accent-gold) !important;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+button:hover,
+.button:hover {
+    background-color: rgba(245, 158, 11, 0.1);
+}
+
+input[type="submit"].primary,
+input[type="reset"].primary,
+input[type="button"].primary,
+button.primary,
+.button.primary {
+    background-color: var(--accent-gold);
+    box-shadow: none;
+    color: #ffffff !important;
+}
+
+input[type="submit"].primary:hover,
+input[type="reset"].primary:hover,
+input[type="button"].primary:hover,
+button.primary:hover,
+.button.primary:hover {
+    background-color: var(--accent-gold-hover);
+}
+
+input[type="submit"].primary:active,
+input[type="reset"].primary:active,
+input[type="button"].primary:active,
+button.primary:active,
+.button.primary:active {
+    background-color: var(--accent-gold-dark);
+}
+
+/* Form focus states */
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="search"]:focus,
+input[type="url"]:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 0 1px var(--accent-gold);
+}
+
+/* Checkbox/Radio focus */
+input[type="checkbox"]:checked + label:before,
+input[type="radio"]:checked + label:before {
+    background: var(--accent-gold-dark);
+    border-color: var(--accent-gold-dark);
+}
+
+input[type="checkbox"]:focus + label:before,
+input[type="radio"]:focus + label:before {
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 0 1px var(--accent-gold);
+}
+
+/* Contact icons in main content */
+#main ul.contact li:before {
+    color: var(--accent-gold);
+}
+
+/* Pagination */
+ul.pagination li > .page.active {
+    background-color: var(--accent-gold);
+}
+
+ul.pagination li > .page.active:hover {
+    background-color: var(--accent-gold-hover);
+}
+
+/* Features icon */
+.features article .icon:before {
+    color: var(--accent-gold);
+}
+
+/* Menu hover in main content */
+#main #menu ul a:hover,
+#main #menu ul span:hover {
+    color: var(--accent-gold);
+}
+
+#main #menu ul a.opener:hover:before,
+#main #menu ul span.opener:hover:before {
+    color: var(--accent-gold);
+}
+
+/* Dark background for the entire page */
+body {
+    background: linear-gradient(180deg, var(--primary-dark) 0%, var(--primary-dark-2) 100%) !important;
+    min-height: 100vh;
+}
+
+/* Wrapper adjustments for inset effect */
+#wrapper {
+    background: transparent;
+    padding: 16px;
+    padding-left: 0;
+}
+
+/* Main content - the "inset" panel */
+#main {
+    background: var(--gray-light);
+    border-radius: 20px;
+    box-shadow: 0 10px 50px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
+    min-height: calc(100vh - 32px);
+    overflow: hidden;
+}
+
+#main > .inner {
+    background: var(--gray-light);
+}
+
+/* Sidebar - transparent with light text */
+#sidebar {
+    background-color: transparent !important;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+#sidebar > .inner {
+    background: transparent;
+}
+
+#sidebar > .inner > * {
+    border-bottom-color: rgba(255, 255, 255, 0.15);
+}
+
+#sidebar > .inner > .alt {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Sidebar headings */
+#sidebar h2,
+#sidebar header.major h2 {
+    color: #ffffff;
+}
+
+#sidebar header.major > :last-child {
+    border-bottom-color: var(--accent-gold);
+}
+
+/* Sidebar text */
+#sidebar p,
+#sidebar .copyright {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Sidebar links */
+#sidebar a {
+    color: var(--accent-gold);
+    border-bottom-color: transparent;
+}
+
+#sidebar a:hover {
+    color: var(--accent-gold-hover) !important;
+}
+
+/* Sidebar menu */
+#sidebar #menu ul {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+#sidebar #menu ul a,
+#sidebar #menu ul span {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+#sidebar #menu ul a:hover,
+#sidebar #menu ul span:hover {
+    color: var(--accent-gold) !important;
+}
+
+#sidebar #menu > ul > li {
+    border-top-color: rgba(255, 255, 255, 0.15);
+}
+
+#sidebar #menu ul a.opener:before,
+#sidebar #menu ul span.opener:before {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#sidebar #menu ul a.opener:hover:before,
+#sidebar #menu ul span.opener:hover:before {
+    color: var(--accent-gold);
+}
+
+/* Sidebar contact icons */
+#sidebar ul.contact li {
+    border-top-color: rgba(255, 255, 255, 0.15);
+}
+
+#sidebar ul.contact li:before {
+    color: var(--accent-gold);
+}
+
+#sidebar ul.contact li a {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+#sidebar ul.contact li a:hover {
+    color: var(--accent-gold) !important;
+}
+
+/* Sidebar footer */
+#sidebar #footer .copyright {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#sidebar #footer .copyright a {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+#sidebar #footer .copyright a:hover {
+    color: var(--accent-gold) !important;
+}
+
+/* Mobile sidebar toggle button - needs visibility on dark bg */
+@media screen and (max-width: 1280px) {
+    #sidebar {
+        background-color: var(--primary-dark) !important;
+    }
+
+    #sidebar > .inner {
+        background: var(--primary-dark);
+    }
+
+    #wrapper {
+        padding-left: 16px;
+    }
+}
+
+/* Small screen adjustments */
+@media screen and (max-width: 736px) {
+    #wrapper {
+        padding: 8px;
+    }
+
+    #main {
+        border-radius: 12px;
+        min-height: calc(100vh - 16px);
+    }
+
+    #sidebar .toggle:before {
+        color: var(--primary-dark) !important;
+    }
+
+    #sidebar .toggle:after {
+        background: rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* ============================================
+   HAMBURGER MENU ICON FIX
+   Make it visible on light backgrounds
+   ============================================ */
+
+/* Desktop: hamburger icon is on the light gray content area */
+#sidebar .toggle:before {
+    color: var(--primary-dark) !important;
+}
+
+/* When sidebar is active/open, icon should still be visible */
+#sidebar:not(.inactive) .toggle:before {
+    color: var(--primary-dark) !important;
+}
+
+/* Medium screens (iPad) - between 737px and 1280px */
+@media screen and (min-width: 737px) and (max-width: 1280px) {
+    #sidebar .toggle {
+        height: 6.25em;
+        left: 26em;
+        line-height: 6.25em;
+        text-indent: 5em;
+        width: 5em;
+        top: 1em;
+    }
+
+    #sidebar .toggle:before {
+        color: var(--primary-dark) !important;
+    }
+
+    #sidebar .toggle:after {
+        background: rgba(0, 0, 0, 0.08);
+    }
+
+    #sidebar .toggle:hover:after {
+        background: rgba(0, 0, 0, 0.12);
+    }
+}
+
+/* Mobile screens */
+@media screen and (max-width: 736px) {
+    #sidebar .toggle:before {
+        color: var(--primary-dark) !important;
+        z-index: 2;
+    }
+
+    #sidebar .toggle:after {
+        background: rgba(0, 0, 0, 0.08) !important;
+    }
+
+    #sidebar .toggle:hover:before {
+        color: var(--accent-gold) !important;
+    }
+
+    #sidebar .toggle:hover:after {
+        background: rgba(245, 158, 11, 0.15) !important;
+    }
+}
