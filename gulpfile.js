@@ -77,13 +77,13 @@ function webfonts() {
         .pipe(gulp.dest('dist/assets/webfonts'));
 }
 
-// Cache busting task
+// Cache busting task - update compiled HTML files
 function cacheBust() {
     const cbString = new Date().getTime();
     console.log('Cache bust:', cbString);
-    return gulp.src(['./dist/partials/*'])
-        .pipe(replace(/v=\d+/g, 'v=' + cbString))
-        .pipe(gulp.dest('./dist/partials/'));
+    return gulp.src(['./dist/**/*.html'])
+        .pipe(replace(/\?v=\d+/g, '?v=' + cbString))
+        .pipe(gulp.dest('./dist/'));
 }
 
 // Watch task
