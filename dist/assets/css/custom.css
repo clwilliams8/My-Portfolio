@@ -380,6 +380,12 @@ body {
 }
 /* Mobile screens */
 @media screen and (max-width: 736px) {
+  #sidebar .toggle {
+    text-indent: 7.25em;
+    width: 7.25em;
+    left: 24.5em;
+    top: 0.8em;
+  }
   #sidebar .toggle:before {
     color: var(--primary-dark) !important;
     z-index: 2;
