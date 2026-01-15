@@ -188,9 +188,19 @@ ul.pagination li > .page.active:hover {
 }
 
 /* Dark background for the entire page */
+/* iOS Safari bounce fix - make body the scroll container */
+html {
+  height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
 body {
   background: linear-gradient(180deg, var(--primary-dark) 0%, var(--primary-dark-2) 100%) !important;
-  min-height: 100vh;
+  height: 100%;
+  overflow: auto;
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Wrapper adjustments for inset effect */
