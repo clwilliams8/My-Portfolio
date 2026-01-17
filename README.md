@@ -3,7 +3,7 @@
 Check out my portfolio of work at <a href="https://coltons-apps.tech/" target="_blank">coltons-apps.tech</a>
 
 Notes to myself:
-Node version: 20+ (use `nvm use` to auto-switch via .nvmrc)
+Node version: 22+ (use `nvm use` to auto-switch via .nvmrc)
 
 ## Setup
 npm install

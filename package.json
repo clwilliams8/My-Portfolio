@@ -19,7 +19,7 @@
   },
   "homepage": "https://clwilliams8.github.io/My-Portfolio",
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=22.0.0"
   },
   "devDependencies": {
     "gulp": "^5.0.1",
@@ -30,7 +30,7 @@
     "gulp-sass": "^6.0.1",
     "gulp-terser": "^2.1.0",
     "nunjucks": "^3.2.4",
-    "sass": "^1.97.0"
+    "sass": "^1.97.2"
   },
   "dependencies": {
     "gh-pages": "^6.3.0"

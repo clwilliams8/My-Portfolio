@@ -19,8 +19,8 @@
     <title>Colton's Portfolio</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css?v=1768479971055" />
-    <link rel="stylesheet" href="assets/css/custom.css?v=1768479971055" />
+    <link rel="stylesheet" href="assets/css/main.css?v=1768610752725" />
+    <link rel="stylesheet" href="assets/css/custom.css?v=1768610752725" />
     <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
@@ -138,12 +138,16 @@
 			</div>
 
 		<!-- Scripts -->
-        <script src="/assets/js/main.js?v=1768479971055"></script>
-<script  type="text/javascript" src="https://unpkg.com/nanogallery2@3.0.5/dist/jquery.nanogallery2.min.js"></script>
+        <script src="/assets/js/main.js?v=1768610752725"></script>
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 
 <script>
     function goBack() {
       window.history.back();
+    }
+    // Initialize GLightbox for any gallery
+    if (typeof GLightbox !== 'undefined') {
+        const lightbox = GLightbox({ selector: '.glightbox' });
     }
 </script>
 	</body>
