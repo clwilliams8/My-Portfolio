@@ -73,38 +73,47 @@
                 <a href="../portfolio.html" class="button" style="margin-top: 35px;"><i class="fas fa-chevron-left"></i> Back to portfolio</a>
                 <section>
                     <header class="main">
-                        <h1>Kajacs Contractors</h1>
+                        <h1>ABA Toolbox</h1>
                     </header>
-                    <span class="image main"><img src="../images/portfolio/kajacs/responsive-showcase-mockup.png" alt="" /></span>
+                    <span class="image main"><img src="../images/portfolio/aba-toolbox/logo.png" alt="" /></span>
 
-                    <h2>About Kajacs Contractors</h2>
-                    <p>Founded in 1993, KAJACS Contractors has built a solid reputation of excellence. Our above-and-beyond approach to coordinating and executing projects of all sizes sets us apart as a competitive builder with a superior process. KAJACS
-                        combines seasoned professionals with state-of-the-art equipment to successfully complete our many industrial and public works projects. While many of our projects are challenging, we are well-known in Missouri, Tennessee, Mississippi,
-                        and Arkansas for being reliable and for providing quality work. At KAJACS, everyone works together to achieve our primary objective: high-quality, professional work at the lowest possible cost! You can read more on <a href="https://www.kajacs.com/about"
-                            target="_blank">their about page</a>.</p>
+                    <h2>About ABA Toolbox</h2>
+                    <p>ABA Toolbox is an all-in-one clinical and practice management software platform designed specifically for professionals in Applied Behavior Analysis (ABA). Created by therapists for therapists, it serves behavior analysts, educators, and therapists working with individuals diagnosed with autism spectrum disorder, behavior disorders, and developmental disabilities. The platform supports schools, agencies, clinics, and universities with scalable and flexible tools that grow with each organization's needs.</p>
 
                     <hr class="major" />
 
                     <h2>About The Project</h2>
                     <!-- About us page of company here -->
-                    <p><strong>Mission:</strong> Deliver a high-performance platform rebuild for this established industrial contractor, replacing a sluggish WordPress site with a custom Laravel solution featuring enhanced project galleries, optimized image presentation, and an intuitive backend for client self-management.</p>
-                    <p><strong>Technologies Used:</strong> Laravel (PHP Backend Framework), Tailwind CSS (Utility-First Styling), High-Resolution Image Galleries, Custom Navigation System, Blade Templating (Frontend Rendering), MySQL (Database), Responsive Design.</p>
+                    <p><strong>Mission:</strong> Build a comprehensive clinical management platform to streamline behavior assessment, intervention planning, and progress monitoring for ABA professionals. The platform needed to provide a vast curriculum of 1,000+ meticulously designed lessons and tools, integrated with standardized assessments like VB-MAPP and ABLLS-R, while maintaining strict HIPAA and FERPA compliance for sensitive client data.</p>
+                    <p><strong>Technologies Used:</strong> Quasar Framework (Vue.js SPA with Material Design), GraphQL (Efficient Data Fetching), Pinia (State Management), Laravel (PHP Backend Framework), Tenancy For Laravel (Multi-Tenant SaaS Architecture), Docker (Containerization), Kubernetes (Container Orchestration), PostgreSQL (Database), HIPAA-Compliant Infrastructure, FERPA-Compliant Architecture.</p>
                     <p><strong>Links</strong>
                         <ul style="margin-left: 28px; margin-top: -20px;">
+                            <li style="padding-bottom: 7px;"><a href="https://www.abatoolbox.com/" target="_blank">ABA Toolbox Website</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://quasar.dev/" target="_blank">Quasar Framework docs</a></li>
                             <li style="padding-bottom: 7px;"><a href="https://laravel.com/" target="_blank">Laravel docs</a></li>
-                            <li style="padding-bottom: 7px;"><a href="https://tailwindcss.com/" target="_blank">Tailwind CSS</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://tenancyforlaravel.com/" target="_blank">Tenancy For Laravel docs</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://graphql.org/" target="_blank">GraphQL</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://pinia.vuejs.org/" target="_blank">Pinia State Management</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://www.docker.com/" target="_blank">Docker</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://kubernetes.io/" target="_blank">Kubernetes</a></li>
                         </ul>
                     </p>
-                    <p><strong>Before: </strong><a target="_blank" href="https://web.archive.org/web/20201125074104/https://www.kajacs.com/">From the Web Archives</a></p>
-                    <p><strong>After: </strong><a target="_blank" href="https://web.archive.org/web/20211207141003/https://www.kajacs.com/">From the Web Archives</a> (Note: The site has since been rebuilt in WordPress; this archive link shows my Laravel build)</p>
 
                     <h2>Summary</h2>
                     <!-- My testimonial here -->
-                    <p>This project addressed key pain points with the client's previous WordPress installation: slow performance, unintuitive backend tools, and undersized imagery that failed to showcase their impressive industrial construction work.</p>
+                    <p>I joined this project as part of a cohort of contractors on a 4-week engagement. When the contract period ended, I was the only developer retained—ultimately staying on the project for over 12 months as the primary full-stack developer. During this time, I led the platform through production launch, successfully executed a complex 13-step data migration from the legacy 1.0 system, and served as the main point of contact for customer support—joining Zoom calls directly with end users to diagnose issues and implement hotfixes in real-time. When the DevOps engineer departed, I assumed ownership of the infrastructure and deployment pipeline. I also collaborated closely with a second development team based in India, reviewing their pull requests, participating in daily standups, and contributing to sprint planning.</p>
 
-                    <p>The redesigned platform features a sophisticated project portfolio system with large, high-resolution imagery that properly communicates the scale and quality of their work across industrial and public works projects. The custom navigation implementation required careful architectural planning to achieve the desired user experience while maintaining responsive behavior across all device sizes.</p>
+                    <p><strong>Modern SPA Architecture:</strong> Built the frontend as a single-page application using the Quasar Framework, leveraging Google's Material Design guidelines to ensure accessibility compliance and intuitive UX for clinical professionals. The component-based architecture enabled rapid feature development while maintaining consistency across the platform's extensive toolset.</p>
 
-                    <p>The result is a performant, visually striking platform that serves as an effective business development tool for this multi-state contractor operating across Missouri, Tennessee, Mississippi, and Arkansas.</p>
+                    <p><strong>GraphQL Implementation:</strong> Implemented a custom GraphQL layer on both frontend and Laravel backend, enabling precise data fetching where each component requests only the fields it needs. This architecture proved essential for the platform's global department switcher—when users change departments, queries are invalidated and refetched with the new context, ensuring data isolation between organizational units without full page reloads.</p>
+
+                    <p><strong>Clinical Session Architecture:</strong> Integrated Pinia for state management across complex component hierarchies and modal dialogs used during live medical sessions. This architecture ensures seamless data collection and real-time updates as clinicians work through therapy sessions with their clients.</p>
+
+                    <p><strong>Multi-Tenant SaaS Architecture:</strong> Implemented Tenancy For Laravel with the separated database approach, giving each tenant (schools, clinics, agencies) their own isolated PostgreSQL database. This architecture ensures complete data segregation for HIPAA/FERPA compliance while enabling the platform to be licensed to organizations nationwide with minimal onboarding friction.</p>
+
+                    <p><strong>Container Orchestration:</strong> Deployed the platform using Docker containers orchestrated by Kubernetes, enabling horizontal scaling to handle variable load patterns—essential when hundreds of clinicians simultaneously access the system during peak therapy hours. The containerized architecture also streamlines tenant provisioning and ensures consistent environments across development, staging, and production.</p>
+
+                    <p><strong>Compliance & Security:</strong> Implemented rigorous compliance with HIPAA and FERPA standards throughout the stack, from encrypted data storage to audit logging, protecting sensitive client information and maintaining the highest level of confidentiality for healthcare and educational data.</p>
 
                 </section>
             </div>
