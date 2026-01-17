@@ -18,10 +18,34 @@
     <title>Colton's Portfolio</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="../assets/css/main.css?v=1768479971055" />
-    <link rel="stylesheet" href="../assets/css/custom.css?v=1768479971055" />
+    <link rel="stylesheet" href="../assets/css/main.css?v=1768610752725" />
+    <link rel="stylesheet" href="../assets/css/custom.css?v=1768610752725" />
     <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
-    <link  href="https://unpkg.com/nanogallery2@3.0.5/dist/css/nanogallery2.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+    <style>
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .gallery-grid a {
+            display: block;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            border-radius: 4px;
+            background: #f0f0f0;
+        }
+        .gallery-grid a img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.2s;
+        }
+        .gallery-grid a:hover img {
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 	<body class="is-preload">
 
@@ -73,20 +97,22 @@
 
                                     <h2>Assets I created using Photoshop</h2>
                                     <!-- Image gallery here -->
-                                    <!-- ### start of the gallery definition ### -->
-                                    <div id="nanogallery2"
-                                        data-nanogallery2 = '{
-                                            "thumbnailWidth":   400px,
-                                            "thumbnailHeight":  "auto",
-                                            thumbnailGutterWidth: 100px
-                                            }' >
-                                            
-                                        <!-- gallery content -->
-                                        <a href = "/images/portfolio/hanks/splashScreen.png"   data-ngThumb = "/images/portfolio/hanks/splashScreen.png"> splashScreen.png</a>
-                                        <a href = "/images/portfolio/hanks/splashScreenAndroid.png"   data-ngThumb = "/images/portfolio/hanks/splashScreenAndroid.png" > splashScreenAndroid.png </a>
-                                        <a href = "/images/portfolio/hanks/splashScreenIOS.png"   data-ngThumb = "/images/portfolio/hanks/splashScreenIOS.png" > splashScreenIOS.png </a>
-                                        <a href = "/images/portfolio/hanks/splashScreenTablet.png"   data-ngThumb = "/images/portfolio/hanks/splashScreenTablet.png"> splashScreenTablet.png </a>
-                                        <a href = "/images/portfolio/hanks/splashScreenTabletLandscape.png"   data-ngThumb = "/images/portfolio/hanks/splashScreenTabletLandscape.png" > splashScreenTabletLandscape.png </a>
+                                    <div class="gallery-grid">
+                                        <a href="/images/portfolio/hanks/splashScreen.png" class="glightbox" data-gallery="hanks">
+                                            <img src="/images/portfolio/hanks/splashScreen.png" alt="Splash Screen">
+                                        </a>
+                                        <a href="/images/portfolio/hanks/splashScreenAndroid.png" class="glightbox" data-gallery="hanks">
+                                            <img src="/images/portfolio/hanks/splashScreenAndroid.png" alt="Android Splash">
+                                        </a>
+                                        <a href="/images/portfolio/hanks/splashScreenIOS.png" class="glightbox" data-gallery="hanks">
+                                            <img src="/images/portfolio/hanks/splashScreenIOS.png" alt="iOS Splash">
+                                        </a>
+                                        <a href="/images/portfolio/hanks/splashScreenTablet.png" class="glightbox" data-gallery="hanks">
+                                            <img src="/images/portfolio/hanks/splashScreenTablet.png" alt="Tablet Splash">
+                                        </a>
+                                        <a href="/images/portfolio/hanks/splashScreenTabletLandscape.png" class="glightbox" data-gallery="hanks">
+                                            <img src="/images/portfolio/hanks/splashScreenTabletLandscape.png" alt="Tablet Landscape">
+                                        </a>
                                     </div>
 
                                     <h3 style="margin-top: 20px;">Mockups I was given:</h3>
@@ -165,12 +191,16 @@
 			</div>
 
 		<!-- Scripts -->
-        <script src="/assets/js/main.js?v=1768479971055"></script>
-<script  type="text/javascript" src="https://unpkg.com/nanogallery2@3.0.5/dist/jquery.nanogallery2.min.js"></script>
+        <script src="/assets/js/main.js?v=1768610752725"></script>
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 
 <script>
     function goBack() {
       window.history.back();
+    }
+    // Initialize GLightbox for any gallery
+    if (typeof GLightbox !== 'undefined') {
+        const lightbox = GLightbox({ selector: '.glightbox' });
     }
 </script>
 	</body>
