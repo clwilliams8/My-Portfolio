@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+{% include "./partials/headPortfolioDetail.html" %}
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+
+            <div class="inner">
+
+                <!-- Header -->
+                {% include "./partials/header-socialLinks.html" %}
+
+                <!-- Content -->
+                <!-- Back button -->
+                <a href="../portfolio.html" class="button" style="margin-top: 35px;"><i class="fas fa-chevron-left"></i> Back to portfolio</a>
+                <section>
+                    <header class="main">
+                        <h1>Roof Maxx</h1>
+                    </header>
+                    <span class="image main"><img src="../images/portfolio/roof-maxx/logo.svg" alt="" /></span>
+
+                    <h2>About Roof Maxx</h2>
+                    <p>Roof Maxx Technologies is a pioneering roof rejuvenation company founded by Mike and Todd Feazel, industry veterans with decades of roofing experience. The company offers a sustainable alternative to roof replacement through a proprietary treatment that restores aging asphalt shingles, extending roof lifespan by up to 15 years. Operating through a nationwide franchise/dealership network, Roof Maxx has grown to serve homeowners across the United States through hundreds of independently-owned dealerships.</p>
+
+                    <hr class="major" />
+
+                    <h2>About The Project</h2>
+                    <!-- About us page of company here -->
+                    <p><strong>Mission:</strong> Build and maintain a comprehensive corporate software suite supporting Roof Maxx's nationwide franchise operations—from lead management and dealership onboarding to technician field operations, legal document workflows, and multi-tier billing systems. The platform needed to scale reliably during peak business hours while supporting complex franchise structures spanning multiple LLCs and DBAs across state lines.</p>
+                    <p><strong>Version 1.0 Technologies:</strong> Laravel (PHP Backend Framework), Vue.js (Reactive Frontend), Laravel Forge (Server Management), Laravel Sail (Docker Development Environment), Laravel Horizon (Queue Management), Laravel Pennant (Feature Flags), GitHub Actions (CI/CD), HubSpot CRM (Sales Pipeline), AWS S3 (Document Storage), PHPUnit (Testing Framework), Claude Code (AI-Assisted Development with Custom Agents, Skills & Commands), MkDocs (Technical Documentation), DocDD (Document-Driven Development).</p>
+                    <p><strong>Version 2.0 Technologies:</strong> Go (Microservices), Google Cloud Pub/Sub (Service Communication), Shadcn (UI Component Library), Figma (UI/UX Design), Claude Code (AI-Assisted Development with Custom Agents, Skills & Commands), MkDocs (Technical Documentation), DocDD (Document-Driven Development).</p>
+                    <p><strong>Links</strong>
+                        <ul style="margin-left: 28px; margin-top: -20px;">
+                            <li style="padding-bottom: 7px;"><a href="https://roofmaxx.com/" target="_blank">Roof Maxx Website</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://laravel.com/" target="_blank">Laravel docs</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://vuejs.org/" target="_blank">Vue.js docs</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://forge.laravel.com/" target="_blank">Laravel Forge</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://laravel.com/docs/sail" target="_blank">Laravel Sail</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://laravel.com/docs/horizon" target="_blank">Laravel Horizon</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://laravel.com/docs/pennant" target="_blank">Laravel Pennant</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://go.dev/" target="_blank">Go Language</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://cloud.google.com/pubsub" target="_blank">Google Cloud Pub/Sub</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://ui.shadcn.com/" target="_blank">Shadcn UI</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://github.com/features/actions" target="_blank">GitHub Actions</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://www.hubspot.com/" target="_blank">HubSpot CRM</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://aws.amazon.com/s3/" target="_blank">AWS S3</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://phpunit.de/" target="_blank">PHPUnit</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://help.figma.com/hc/en-us" target="_blank">Figma</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://platform.claude.com/docs/en/intro" target="_blank">Claude Code</a></li>
+                            <li style="padding-bottom: 7px;"><a href="https://www.mkdocs.org/" target="_blank">MkDocs</a></li>
+                        </ul>
+                    </p>
+
+                    <h2>Summary</h2>
+                    <!-- My testimonial here -->
+                    <p>On this project I served as a senior full-stack developer, contributing across infrastructure, backend, frontend, and DevOps. My work spanned from emergency production fixes to architecting a complete platform modernization with Go microservices.</p>
+
+                    <p><strong>Infrastructure Stabilization:</strong> Upon joining, I immediately addressed critical production stability issues. The primary application server on Forge was being overwhelmed during peak business hours, causing multiple daily crashes for users. I architected and deployed a dedicated queue server to offload background job processing via Laravel Horizon, eliminating the production outages and ensuring reliable service during high-traffic periods.</p>
+
+                    <p><strong>Release Management & DevOps:</strong> Implemented a standardized release cycle with comprehensive Git workflows, including documented procedures for hotfixes, staging deployments, and production releases. Managed staging and production deployments on a near-daily basis, ensuring rapid feature delivery while maintaining system stability.</p>
+
+                    <p><strong>Mobile-Responsive Field Operations:</strong> Completely rebuilt the corporate software interface to be mobile-responsive, enabling field technicians to upload before-and-after photos directly to work orders from their mobile devices—critical functionality for a service business with crews operating across the country.</p>
+
+                    <p><strong>Feature Flag Architecture:</strong> Implemented Laravel Pennant feature flags throughout the corporate software, enabling controlled rollouts to specific dealerships based on their technology platform tier. This architecture was essential for launching Service Maxx, a new platform tier that introduced estimate creation and customer e-signature capabilities for dealerships.</p>
+
+                    <p><strong>Legal Document Workflow Engine:</strong> Built a complex PDF template engine for Exclusive Dealership Amendment (EDA) legal agreements. The system managed a complete document lifecycle—Draft → Sent → Resend (with decline rationale) → Canceled → Waiting for Payment → Paid/Complete—routing documents through multiple signatories. Upon reaching the final Paid/Complete stage, the system automatically generates archival copies stored in AWS S3, accessible to both corporate administrators and franchise owners through their respective portals.</p>
+
+                    <p><strong>Microservices Architecture:</strong> When a new CTO joined, I assisted in architecting and implementing a 2.0 platform vision that decomposed the monolithic corporate software into Go microservices. Implemented Google Cloud Pub/Sub for asynchronous service-to-service communication. The microservices architecture was organized as a mono-repo with independent GitHub Actions deployment pipelines for each service.</p>
+
+                    <p><strong>CRM Integration:</strong> Implemented complex custom objects in HubSpot CRM to accurately represent the legal structure of franchise relationships—mapping Companies to their constituent LLCs and DBAs as registered with each Secretary of State across the country. This enabled accurate sales pipeline tracking across the franchise network.</p>
+
+                    <p><strong>Multi-Franchise Portal:</strong> Built a global Headquarters and Locations switcher in dealer portals, allowing franchise owners with multiple dealerships across state lines to seamlessly navigate between their different business entities within a single authenticated session.</p>
+
+                    <p><strong>UI/UX Modernization:</strong> Collaborated on modern user experience designs in Figma for the new SPA frontends, ensuring the platform delivered a polished, intuitive interface for corporate users and franchise operators alike.</p>
+
+                </section>
+            </div>
+        </div>
+
+        <!-- Sidebar & Footer -->
+        {% include "./partials/sidebar-footer.html" %}
+
+    </div>
+
+    <!-- Scripts -->
+    {% include "./partials/scripts.html" %}
+</body>
+
+</html>
