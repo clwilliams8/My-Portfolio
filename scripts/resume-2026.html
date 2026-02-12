@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colton Williams - Resume 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  @page {
+    size: Letter;
+    margin: 0;
+  }
+
+  body {
+    font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 10px;
+    line-height: 1.45;
+    color: #333;
+    background: #fff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    width: 8.5in;
+    height: 11in;
+    padding: 0.5in 0.55in;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+  }
+
+  .page:last-child {
+    page-break-after: auto;
+  }
+
+  /* Header */
+  .header {
+    margin-bottom: 18px;
+  }
+
+  .header h1 {
+    font-size: 32px;
+    font-weight: 900;
+    color: #1a1a1a;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+  }
+
+  .header .subtitle {
+    font-size: 18px;
+    font-weight: 700;
+    color: #4A90D9;
+    margin-bottom: 10px;
+  }
+
+  .contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 20px;
+    font-size: 10.5px;
+    color: #555;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .contact-item .icon {
+    color: #4A90D9;
+    font-size: 11px;
+    width: 14px;
+    text-align: center;
+  }
+
+  .contact-item a {
+    color: #4A90D9;
+    text-decoration: none;
+  }
+
+  /* Layout */
+  .content {
+    display: flex;
+    gap: 30px;
+  }
+
+  .left-col {
+    flex: 0 0 62%;
+  }
+
+  .right-col {
+    flex: 1;
+  }
+
+  /* Section Headers */
+  .section-title {
+    font-size: 16px;
+    font-weight: 900;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+    letter-spacing: 0.5px;
+  }
+
+  .section-divider {
+    height: 2.5px;
+    background: #4A90D9;
+    margin-bottom: 14px;
+    border: none;
+  }
+
+  /* Job Entries */
+  .job-entry {
+    margin-bottom: 14px;
+  }
+
+  .job-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1px;
+  }
+
+  .job-company {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #4A90D9;
+    margin-bottom: 3px;
+  }
+
+  .job-meta {
+    display: flex;
+    gap: 16px;
+    font-size: 9.5px;
+    color: #777;
+    margin-bottom: 5px;
+  }
+
+  .job-meta .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .job-meta .meta-icon {
+    color: #4A90D9;
+    font-size: 9px;
+  }
+
+  .job-bullets {
+    list-style: disc;
+    padding-left: 16px;
+    font-size: 9.5px;
+    color: #444;
+    line-height: 1.5;
+  }
+
+  .job-bullets li {
+    margin-bottom: 2.5px;
+  }
+
+  /* Right Column Sections */
+  .career-objective {
+    font-size: 9.5px;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 18px;
+  }
+
+  .education-entry {
+    margin-bottom: 16px;
+  }
+
+  .edu-degree {
+    font-size: 12px;
+    font-weight: 700;
+    color: #1a1a1a;
+  }
+
+  .edu-field {
+    font-size: 10.5px;
+    color: #444;
+  }
+
+  .edu-school {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #4A90D9;
+    font-style: italic;
+  }
+
+  .edu-meta {
+    display: flex;
+    gap: 14px;
+    font-size: 9.5px;
+    color: #777;
+    margin-top: 3px;
+  }
+
+  .edu-meta .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .edu-meta .meta-icon {
+    color: #4A90D9;
+    font-size: 9px;
+  }
+
+  /* Skills */
+  .skills-list {
+    list-style: disc;
+    padding-left: 16px;
+    font-size: 9.5px;
+    color: #444;
+    line-height: 1.65;
+  }
+
+  .skills-list li {
+    margin-bottom: 2px;
+  }
+
+  /* Page 2 layout */
+  .page2-left-col {
+    width: 62%;
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== PAGE 1 ==================== -->
+<div class="page">
+  <!-- Header -->
+  <div class="header">
+    <h1>COLTON WILLIAMS</h1>
+    <div class="subtitle">Software Engineer</div>
+    <div class="contact-row">
+      <div class="contact-item">
+        <span class="icon">&#9993;</span>
+        colton@coltons-apps.tech
+      </div>
+      <div class="contact-item">
+        <span class="icon">&#9742;</span>
+        (501) 304-4100
+      </div>
+      <div class="contact-item">
+        <span class="icon">&#9679;</span>
+        Benton, AR
+      </div>
+      <div class="contact-item">
+        <span class="icon" style="font-weight:bold;">in</span>
+        <a href="https://www.linkedin.com/in/colton-williams7/">LinkedIn</a>
+      </div>
+      <div class="contact-item">
+        <span class="icon">&#10070;</span>
+        <a href="https://github.com/clwilliams8">Github</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Two Column Layout -->
+  <div class="content">
+    <!-- LEFT COLUMN: Work Experience -->
+    <div class="left-col">
+      <div class="section-title">Work Experience</div>
+      <hr class="section-divider">
+
+      <!-- Roof Maxx -->
+      <div class="job-entry">
+        <div class="job-title">Senior Software Engineer III <span style="font-size: 9.5px; font-weight: 400; color: #777;">(promoted Sep 2025)</span></div>
+        <div class="job-title" style="font-size: 11px; color: #555;">Senior Software Engineer II <span style="font-size: 9.5px; font-weight: 400; color: #777;">(Dec 2024 &ndash; Sep 2025)</span></div>
+        <div class="job-company">Roof Maxx</div>
+        <div class="job-meta">
+          <div class="meta-item">
+            <span class="meta-icon">&#128197;</span>
+            December 2024 - Present
+          </div>
+          <div class="meta-item">
+            <span class="meta-icon">&#9679;</span>
+            Remote
+          </div>
+        </div>
+        <ul class="job-bullets">
+          <li>Resolved critical production stability issues upon joining &mdash; architected and deployed a dedicated queue server with Laravel Horizon, eliminating daily crashes during peak hours.</li>
+          <li>Built a complex legal document workflow engine for franchise agreements with full lifecycle management (Draft &rarr; Sent &rarr; Canceled &rarr; Paid/Complete), multi-signatory routing, and automated archival to AWS S3.</li>
+          <li>Rebuilt the corporate interface to be fully mobile-responsive, enabling field technicians nationwide to upload photos and manage work orders from their devices.</li>
+          <li>Implemented Laravel Pennant feature flags for controlled rollouts by dealership tier, enabling the launch of Service Maxx &mdash; a new platform tier with estimate creation and e-signature capabilities.</li>
+          <li>Assisted in architecting the v2.0 platform: decomposing the Laravel monolith into Go microservices with Google Cloud Pub/Sub, organized as a mono-repo with independent GitHub Actions CI/CD pipelines per service.</li>
+          <li>Integrated HubSpot CRM with custom objects mapping franchise legal structures across state jurisdictions, and built a multi-franchise portal switcher for owners with dealerships across state lines.</li>
+          <li>Managed staging and production deployments near-daily with standardized Git workflows for hotfixes and releases.</li>
+        </ul>
+      </div>
+
+      <!-- Colton Williams Ventures -->
+      <div class="job-entry">
+        <div class="job-title">Owner</div>
+        <div class="job-company">Colton Williams Ventures, LLC</div>
+        <div class="job-meta">
+          <div class="meta-item">
+            <span class="meta-icon">&#128197;</span>
+            June 2023 - Present
+          </div>
+          <div class="meta-item">
+            <span class="meta-icon">&#9679;</span>
+            Benton, AR
+          </div>
+        </div>
+        <ul class="job-bullets">
+          <li>Independent software consultancy delivering full-stack web applications and SaaS platforms.</li>
+          <li>Leveraging AI-agentic development tools including Claude Code for accelerated, high-quality delivery.</li>
+          <li>Tech stack spans PHP/Laravel, Vue.js, Go, Docker, Kubernetes, and multi-cloud infrastructure.</li>
+        </ul>
+      </div>
+
+      <!-- SOLTECH -->
+      <div class="job-entry">
+        <div class="job-title">Full Stack Developer (Contract)</div>
+        <div class="job-company">SOLTECH</div>
+        <div class="job-meta">
+          <div class="meta-item">
+            <span class="meta-icon">&#128197;</span>
+            November 2023 - December 2024
+          </div>
+          <div class="meta-item">
+            <span class="meta-icon">&#9679;</span>
+            Remote
+          </div>
+        </div>
+        <ul class="job-bullets">
+          <li>Led the platform through a successful production launch and executed a complex 13-step data migration from the legacy 1.0 system with zero data loss.</li>
+          <li>Built frontend features as a single-page application using Quasar Framework (Vue.js) with GraphQL and Pinia state management across complex clinical session workflows.</li>
+          <li>Implemented multi-tenant architecture using Tenancy For Laravel with isolated PostgreSQL databases per tenant, ensuring HIPAA and FERPA compliance.</li>
+          <li>Assumed full ownership of the DevOps pipeline (Docker, Kubernetes) after the infrastructure engineer departed, managing deployments and horizontal scaling.</li>
+          <li>Served as primary point of contact for customer support &mdash; joining Zoom calls with end users to diagnose issues and ship hotfixes in real-time.</li>
+          <li>Collaborated with an offshore development team in India: reviewing pull requests, participating in daily standups, and contributing to sprint planning.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="right-col">
+      <div class="section-title">Career Objective</div>
+      <hr class="section-divider">
+      <p class="career-objective">
+        Full-stack software engineer passionate about building scalable, well-documented systems &mdash; from monolithic PHP applications to Go microservices with cloud-native infrastructure. I leverage AI-agentic development tools like Claude Code to accelerate delivery and maintain code quality at scale. Equally effective leading projects independently or collaborating cross-functionally. Eager to join a forward-thinking team building technology that makes a meaningful impact.
+      </p>
+
+      <div class="section-title">Education</div>
+      <hr class="section-divider">
+      <div class="education-entry">
+        <div class="edu-degree">Bachelor of Science</div>
+        <div class="edu-field">Computer Science</div>
+        <div class="edu-school">University of Arkansas at Little Rock</div>
+        <div class="edu-meta">
+          <div class="meta-item">
+            <span class="meta-icon">&#128197;</span>
+            2014 - 2018
+          </div>
+          <div class="meta-item">
+            <span class="meta-icon">&#9679;</span>
+            Little Rock, AR
+          </div>
+        </div>
+      </div>
+
+      <div class="section-title">Skills</div>
+      <hr class="section-divider">
+      <ul class="skills-list">
+        <li>PHP, Laravel, Go</li>
+        <li>Laravel Ecosystem (Horizon, Pennant, Cashier, Forge, Sail, and more)</li>
+        <li>TypeScript, JavaScript (Vue.js, React, Next.js, Node.js, Nest.js)</li>
+        <li>Quasar Framework, CapacitorJS</li>
+        <li>SQL, PostgreSQL, Meilisearch</li>
+        <li>GraphQL, RESTful APIs</li>
+        <li>Docker, Kubernetes</li>
+        <li>AWS / Azure / Google Cloud</li>
+        <li>CI/CD, GitHub Actions</li>
+        <li>Microservices Architecture</li>
+        <li>HIPAA &amp; FERPA Compliance</li>
+        <li>ER Diagrams, Figma, Adobe Products</li>
+        <li>AI-Assisted Development (Claude Code)</li>
+        <li>WordPress, Shopify, and similar CMSs</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PAGE 2 ==================== -->
+<div class="page">
+  <div class="header">
+    <h1>COLTON WILLIAMS</h1>
+    <div class="subtitle">Software Engineer</div>
+  </div>
+
+  <div class="section-title">Work Experience <span style="font-size: 10px; font-weight: 400; color: #999; text-transform: none; font-style: italic;">(continued)</span></div>
+  <hr class="section-divider">
+
+  <div class="page2-left-col">
+
+    <!-- Active Logic -->
+    <div class="job-entry">
+      <div class="job-title">Software Engineer</div>
+      <div class="job-company">Active Logic</div>
+      <div class="job-meta">
+        <div class="meta-item">
+          <span class="meta-icon">&#128197;</span>
+          October 2022 - November 2023
+        </div>
+        <div class="meta-item">
+          <span class="meta-icon">&#9679;</span>
+          Remote
+        </div>
+      </div>
+      <ul class="job-bullets">
+        <li>Core developer on a greenfield SaaS TMS built for a $50M+ freight brokerage handling 300+ daily shipments. Wrote approximately 80% of the codebase over 12 months, delivering weekly sprints.</li>
+        <li>Designed the database architecture and built all primary CRUD interfaces from project inception &mdash; Shipments, Customers, Carriers, and Locations.</li>
+        <li>Implemented a 20+ status state machine managing the full shipment lifecycle from tender through completion, including carrier coverage, dispatch, and accounting review.</li>
+        <li>Built the complete accounting pipeline with document upload/review/approval workflows, QuickBooks API integration for automated invoicing, and DomPDF-generated rate confirmations stored in Azure Blob Storage.</li>
+        <li>Implemented multi-tenant architecture using Tenancy For Laravel with isolated subdomains per broker, plus a REST API for bulk data migration &mdash; designed to license to 22,000+ freight brokers nationwide.</li>
+        <li>Integrated Google Maps API and Macropoint for live GPS tracking visualization with a configurable notification system for shipment status updates.</li>
+        <li>Deployed Meilisearch with automatic model indexing achieving sub-100ms full-text search, and configured Azure AD SSO with automatic account provisioning.</li>
+        <li>Built Chart.js analytics dashboards with flexible date filtering for margin vs. volume analysis and top account metrics.</li>
+      </ul>
+    </div>
+
+    <!-- FLEX360 Senior -->
+    <div class="job-entry">
+      <div class="job-title">Senior Full Stack Laravel/PHP Developer</div>
+      <div class="job-company">FLEX360</div>
+      <div class="job-meta">
+        <div class="meta-item">
+          <span class="meta-icon">&#128197;</span>
+          February 2022 - October 2022
+        </div>
+        <div class="meta-item">
+          <span class="meta-icon">&#9679;</span>
+          Little Rock, AR
+        </div>
+      </div>
+      <ul class="job-bullets">
+        <li>Built and maintained 100s of production web applications.</li>
+        <li>Developed a composer package CMS for Laravel called Pilot composed of models, migrations, controllers, routes, frontend views, and a config file that cut our project delivery time by around 75% and made our codebase and pages more consistent.</li>
+      </ul>
+    </div>
+
+    <!-- FLEX360 Web Developer -->
+    <div class="job-entry">
+      <div class="job-title">Web Developer</div>
+      <div class="job-company">FLEX360</div>
+      <div class="job-meta">
+        <div class="meta-item">
+          <span class="meta-icon">&#128197;</span>
+          October 2018 - February 2022
+        </div>
+        <div class="meta-item">
+          <span class="meta-icon">&#9679;</span>
+          Little Rock, AR
+        </div>
+      </div>
+      <ul class="job-bullets">
+        <li>Google Workspace and Microsoft super admin. Responsible for onboarding/off-boarding employees, migrating emails, setting up forwarding rules, etc.</li>
+        <li>IT Support for around 70 employees.</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
