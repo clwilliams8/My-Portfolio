@@ -3028,6 +3028,12 @@ button:disabled,
     min-height: 18em;
     width: 100%;
   }
+  #banner .image img {
+    -moz-object-position: center 0%;
+    -webkit-object-position: center 0%;
+    -ms-object-position: center 0%;
+    object-position: center 0%;
+  }
 }
 @media screen and (orientation: portrait) and (max-width: 480px) {
   #banner .image {

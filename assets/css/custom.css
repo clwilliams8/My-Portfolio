@@ -410,3 +410,7 @@ body {
     background: rgba(245, 158, 11, 0.15) !important;
   }
 }
+/* Banner image - keep face visible when cropped */
+#banner .image img {
+  object-position: center 0% !important;
+}
