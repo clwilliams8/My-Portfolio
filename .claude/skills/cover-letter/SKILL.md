@@ -66,7 +66,7 @@ _References available upon request._
 
 **Years of Experience:** 7+
 **Primary Stack:** PHP/Laravel, Vue.js, Tailwind CSS, MySQL
-**Work Style:** 100% remote for 3+ years, distributed teams, daily standups, async communication
+**Work Style:** Professional since 2018 (~8 years), both in-office and fully remote; distributed teams, daily standups, async communication
 **Location:** Central Time Zone
 
 ### Current Work History
