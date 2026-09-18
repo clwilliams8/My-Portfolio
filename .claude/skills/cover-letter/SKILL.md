@@ -71,7 +71,7 @@ _References available upon request._
 
 ### Current Work History
 
-1. **Octaria** — Software Applications Engineer (Contract) — Mar 2026–Present, Remote. Builds a production AI agent platform for an energy investment firm (**never name the end client**). No portfolio page — see the Octaria entry in `scripts/resume-2026.html` for details.
+1. **Octaria** — Software Applications Engineer (Contract) — Mar 2026–Present, Remote. Builds a production AI agent platform for an energy investment firm (**never name the end client**). Details: `src/html/portfolio/octaria.njk`.
 2. **Roof Maxx** — Senior Software Engineer III (promoted Sep 2025) — Dec 2024–May 2026, Remote
 3. **Colton Williams Ventures, LLC** — Owner — Jun 2023–Present, Benton, AR
 4. **SOLTECH** — Full Stack Developer (Contract) — Nov 2023–Dec 2024, Remote
@@ -90,6 +90,7 @@ _References available upon request._
 
 | Project | Stack | Key Metrics |
 |---------|-------|-------------|
+| **Octaria** | Anthropic Claude, OpenClaw, MCP, Next.js/TypeScript, AWS (CDK, Terraform), Teams/Slack, Python | AI agent platform for an energy investment firm (never name the client), air-gapped Closed Zone / Open Zone security, agent provisioning 2–4 hrs → ~90 sec, 40+ ADRs documentation-driven Claude Code workflow |
 | **Roof Maxx** | Laravel, Vue.js, Go, Shadcn, AWS S3, Google Cloud Pub/Sub, GitHub Actions | 300+ franchise dealerships, monolith-to-microservices, Laravel Horizon, Pennant feature flags |
 | **ABA Toolbox** | Laravel, GraphQL, Quasar/Vue.js, PostgreSQL, Kubernetes, Docker | HIPAA/FERPA compliant, 1,000+ curriculum lessons, 13-step data migration, offshore team |
 | **Sunnybrook TMS** | Laravel, Vue.js, Bootstrap 5, MySQL, Azure, Meilisearch | 80% of codebase, $50M+ revenue client, 300+ daily shipments, 20-status state machine, sub-100ms search |
