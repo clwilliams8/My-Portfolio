@@ -49,7 +49,7 @@ I actively leverage AI tools in my development workflow through Claude Code—us
 
 ## Working Style
 
-I've worked fully remote for 3+ years, collaborating with distributed teams across time zones. I'm self-directed, biased toward action, and comfortable with ambiguity. I believe in sharing knowledge through documentation and mentorship—I've established engineering standards, written technical documentation (MkDocs, Document-Driven Development), and guided development teams through daily standups and structured PR reviews.
+I've worked professionally since 2018, both in-office and fully remote, collaborating with distributed teams across time zones. I'm self-directed, biased toward action, and comfortable with ambiguity. I believe in sharing knowledge through documentation and mentorship—I've established engineering standards, written technical documentation (MkDocs, Document-Driven Development), and guided development teams through daily standups and structured PR reviews.
 
 ---
 

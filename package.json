@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "deploy": "gh-pages -d dist",
-    "nunjucks": "node nunjucks.js"
+    "nunjucks": "node nunjucks.js",
+    "postinstall": "node scripts/fix-native-bins.mjs"
   },
   "repository": {
     "type": "git",

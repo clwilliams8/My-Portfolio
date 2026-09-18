@@ -1,2 +1,9 @@
 node_modules
 .claude/*.local.*
+.DS_Store
+
+# Job-application drafts stay local (this repo is public).
+# cover_letter_example.md is the tracked template the cover-letter skill reads.
+cover_letter_*.md
+!cover_letter_example.md
+experience_summary.md

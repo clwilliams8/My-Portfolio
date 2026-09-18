@@ -32,7 +32,7 @@ Adds a project to the portfolio site. The portfolio is a Gulp + Nunjucks static 
 6. **Insert the listing card** into `src/html/portfolio.njk` at the **top of the chosen section** (so newest work appears first). Use the listing-card template below.
 7. **Tell the user how to preview and deploy.** Do NOT run `npm run deploy` yourself.
    ```
-   cd /Users/cwilliams/Desktop/Code/My-Portfolio
+   cd /Users/cwilliams/Code/My-Portfolio
    nvm use
    gulp            # full build
    npx serve dist  # preview at http://localhost:3000/portfolio.html
