@@ -274,6 +274,31 @@
       <div class="section-title">Work Experience</div>
       <hr class="section-divider">
 
+      <!-- Octaria -->
+      <div class="job-entry">
+        <div class="job-title">Software Applications Engineer (Contract)</div>
+        <div class="job-company">Octaria</div>
+        <div class="job-meta">
+          <div class="meta-item">
+            <span class="meta-icon">&#128197;</span>
+            March 2026 - Present
+          </div>
+          <div class="meta-item">
+            <span class="meta-icon">&#9679;</span>
+            Remote
+          </div>
+        </div>
+        <ul class="job-bullets">
+          <li>Build and operate a fleet of production AI agents (Anthropic Claude on the OpenClaw runtime) for an energy investment firm &mdash; deployed per department, team, and individual employee to automate everyday operations, research, and reporting.</li>
+          <li>Implemented a two-zone AWS security model: air-gapped &ldquo;Closed Zone&rdquo; agents access private data and CRM with egress locked at the network layer (Security Groups, Squid allowlist proxy), while &ldquo;Open Zone&rdquo; agents research the public internet &mdash; data flows one way, Open &rarr; Closed.</li>
+          <li>Shipped a Next.js/TypeScript admin dashboard that provisions agents end-to-end on AWS (EC2, S3, SSM, Secrets Manager, cloud-init), cutting setup from 2&ndash;4 hours of manual work to ~90 seconds, with Microsoft Entra ID integration so each employee is provisioned exactly one personal agent.</li>
+          <li>Made agents installable anywhere in the organization through pluggable gateways &mdash; Microsoft Teams (multi-bot relay, Microsoft Graph files and voice), Slack, and web chat.</li>
+          <li>Built recurring research workflows: employees and departments schedule agent jobs that pull news and market data through custom MCP servers (Python, Node.js) and deliver reports on the industries they are making investment deals in.</li>
+          <li>Created a documentation-driven &ldquo;software factory&rdquo; for Claude Code &mdash; custom skills plus MkDocs keeping 40+ ADRs, PRDs, and tech specs current as the source of truth AI coding agents reference and update as they build.</li>
+          <li>Own infrastructure as code (AWS CDK, Terraform), GitHub Actions pipelines, fleet health monitoring, and a shared vector-memory layer (LanceDB) for cross-agent learning.</li>
+        </ul>
+      </div>
+
       <!-- Roof Maxx -->
       <div class="job-entry">
         <div class="job-title">Senior Software Engineer III <span style="font-size: 9.5px; font-weight: 400; color: #777;">(promoted Sep 2025)</span></div>
@@ -282,7 +307,7 @@
         <div class="job-meta">
           <div class="meta-item">
             <span class="meta-icon">&#128197;</span>
-            December 2024 - Present
+            December 2024 - May 2026
           </div>
           <div class="meta-item">
             <span class="meta-icon">&#9679;</span>
@@ -291,11 +316,11 @@
         </div>
         <ul class="job-bullets">
           <li>Resolved critical production stability issues upon joining &mdash; architected and deployed a dedicated queue server with Laravel Horizon, eliminating daily crashes during peak hours.</li>
-          <li>Built a complex legal document workflow engine for franchise agreements with full lifecycle management (Draft &rarr; Sent &rarr; Canceled &rarr; Paid/Complete), multi-signatory routing, and automated archival to AWS S3.</li>
+          <li>Built a legal document workflow engine for franchise agreements with full lifecycle management (Draft &rarr; Sent &rarr; Canceled &rarr; Paid/Complete), multi-signatory routing, and AWS S3 archival.</li>
           <li>Rebuilt the corporate interface to be fully mobile-responsive, enabling field technicians nationwide to upload photos and manage work orders from their devices.</li>
           <li>Implemented Laravel Pennant feature flags for controlled rollouts by dealership tier, enabling the launch of Service Maxx &mdash; a new platform tier with estimate creation and e-signature capabilities.</li>
-          <li>Assisted in architecting the v2.0 platform: decomposing the Laravel monolith into Go microservices with Google Cloud Pub/Sub, organized as a mono-repo with independent GitHub Actions CI/CD pipelines per service.</li>
-          <li>Integrated HubSpot CRM with custom objects mapping franchise legal structures across state jurisdictions, and built a multi-franchise portal switcher for owners with dealerships across state lines.</li>
+          <li>Assisted in architecting the v2.0 platform: decomposing the Laravel monolith into Go microservices with Google Cloud Pub/Sub, in a mono-repo with per-service GitHub Actions CI/CD pipelines.</li>
+          <li>Integrated HubSpot CRM with custom objects mapping franchise legal structures across state jurisdictions, and built a multi-franchise portal switcher for multi-state owners.</li>
           <li>Managed staging and production deployments near-daily with standardized Git workflows for hotfixes and releases.</li>
         </ul>
       </div>
@@ -321,30 +346,6 @@
         </ul>
       </div>
 
-      <!-- SOLTECH -->
-      <div class="job-entry">
-        <div class="job-title">Full Stack Developer (Contract)</div>
-        <div class="job-company">SOLTECH</div>
-        <div class="job-meta">
-          <div class="meta-item">
-            <span class="meta-icon">&#128197;</span>
-            November 2023 - December 2024
-          </div>
-          <div class="meta-item">
-            <span class="meta-icon">&#9679;</span>
-            Remote
-          </div>
-        </div>
-        <ul class="job-bullets">
-          <li>Led the platform through a successful production launch and executed a complex 13-step data migration from the legacy 1.0 system with zero data loss.</li>
-          <li>Built frontend features as a single-page application using Quasar Framework (Vue.js) with GraphQL and Pinia state management across complex clinical session workflows.</li>
-          <li>Implemented multi-tenant architecture using Tenancy For Laravel with isolated PostgreSQL databases per tenant, ensuring HIPAA and FERPA compliance.</li>
-          <li>Assumed full ownership of the DevOps pipeline (Docker, Kubernetes) after the infrastructure engineer departed, managing deployments and horizontal scaling.</li>
-          <li>Served as primary point of contact for customer support &mdash; joining Zoom calls with end users to diagnose issues and ship hotfixes in real-time.</li>
-          <li>Collaborated with an offshore development team in India: reviewing pull requests, participating in daily standups, and contributing to sprint planning.</li>
-        </ul>
-      </div>
-
     </div>
 
     <!-- RIGHT COLUMN -->
@@ -352,7 +353,7 @@
       <div class="section-title">Career Objective</div>
       <hr class="section-divider">
       <p class="career-objective">
-        Full-stack software engineer passionate about building scalable, well-documented systems &mdash; from monolithic PHP applications to Go microservices with cloud-native infrastructure. I leverage AI-agentic development tools like Claude Code to accelerate delivery and maintain code quality at scale. Equally effective leading projects independently or collaborating cross-functionally. Eager to join a forward-thinking team building technology that makes a meaningful impact.
+        Full-stack software engineer building scalable, well-documented systems &mdash; from Laravel/Vue.js applications and Go microservices to secure, production AI agent platforms on cloud-native infrastructure. I use AI-agentic development tools like Claude Code daily to accelerate delivery and maintain code quality at scale. Equally effective leading projects independently or collaborating cross-functionally. Eager to join a forward-thinking, AI-native team building technology that makes a meaningful impact.
       </p>
 
       <div class="section-title">Education</div>
@@ -376,19 +377,21 @@
       <div class="section-title">Skills</div>
       <hr class="section-divider">
       <ul class="skills-list">
-        <li>PHP, Laravel, Go</li>
+        <li>PHP, Laravel, Go, Python</li>
         <li>Laravel Ecosystem (Horizon, Pennant, Cashier, Forge, Sail, and more)</li>
         <li>TypeScript, JavaScript (Vue.js, React, Next.js, Node.js, Nest.js)</li>
+        <li>AI Agents &amp; LLM Apps (Anthropic Claude API, MCP Servers, OpenClaw)</li>
+        <li>AI-Assisted Development (Claude Code skills, agents, and commands)</li>
         <li>Quasar Framework, CapacitorJS</li>
-        <li>SQL, PostgreSQL, Meilisearch</li>
+        <li>MySQL, PostgreSQL, SQL Server, Meilisearch</li>
         <li>GraphQL, RESTful APIs</li>
         <li>Docker, Kubernetes</li>
         <li>AWS / Azure / Google Cloud</li>
-        <li>CI/CD, GitHub Actions</li>
+        <li>Terraform, AWS CDK, CI/CD, GitHub Actions</li>
+        <li>Microsoft Teams, Slack, Graph API, Entra ID</li>
         <li>Microservices Architecture</li>
-        <li>HIPAA &amp; FERPA Compliance</li>
+        <li>Network Security, HIPAA &amp; FERPA Compliance</li>
         <li>ER Diagrams, Figma, Adobe Products</li>
-        <li>AI-Assisted Development (Claude Code)</li>
         <li>WordPress, Shopify, and similar CMSs</li>
       </ul>
     </div>
@@ -406,6 +409,30 @@
   <hr class="section-divider">
 
   <div class="page2-left-col">
+
+    <!-- SOLTECH -->
+    <div class="job-entry">
+      <div class="job-title">Full Stack Developer (Contract)</div>
+      <div class="job-company">SOLTECH</div>
+      <div class="job-meta">
+        <div class="meta-item">
+          <span class="meta-icon">&#128197;</span>
+          November 2023 - December 2024
+        </div>
+        <div class="meta-item">
+          <span class="meta-icon">&#9679;</span>
+          Remote
+        </div>
+      </div>
+      <ul class="job-bullets">
+        <li>Led a HIPAA/FERPA-compliant clinical SaaS platform through a successful production launch and executed a complex 13-step data migration from the legacy 1.0 system with zero data loss.</li>
+        <li>Built frontend features as a single-page application using Quasar Framework (Vue.js) with GraphQL and Pinia state management across complex clinical session workflows.</li>
+        <li>Implemented multi-tenant architecture using Tenancy For Laravel with isolated PostgreSQL databases per tenant, ensuring HIPAA and FERPA compliance.</li>
+        <li>Assumed full ownership of the DevOps pipeline (Docker, Kubernetes) after the infrastructure engineer departed, managing deployments and horizontal scaling.</li>
+        <li>Served as primary point of contact for customer support &mdash; joining Zoom calls with end users to diagnose issues and ship hotfixes in real-time.</li>
+        <li>Collaborated with an offshore development team in India: reviewing pull requests, participating in daily standups, and contributing to sprint planning.</li>
+      </ul>
+    </div>
 
     <!-- Active Logic -->
     <div class="job-entry">
@@ -425,8 +452,8 @@
         <li>Core developer on a greenfield SaaS TMS built for a $50M+ freight brokerage handling 300+ daily shipments. Wrote approximately 80% of the codebase over 12 months, delivering weekly sprints.</li>
         <li>Designed the database architecture and built all primary CRUD interfaces from project inception &mdash; Shipments, Customers, Carriers, and Locations.</li>
         <li>Implemented a 20+ status state machine managing the full shipment lifecycle from tender through completion, including carrier coverage, dispatch, and accounting review.</li>
-        <li>Built the complete accounting pipeline with document upload/review/approval workflows, QuickBooks API integration for automated invoicing, and DomPDF-generated rate confirmations stored in Azure Blob Storage.</li>
-        <li>Implemented multi-tenant architecture using Tenancy For Laravel with isolated subdomains per broker, plus a REST API for bulk data migration &mdash; designed to license to 22,000+ freight brokers nationwide.</li>
+        <li>Built the complete accounting pipeline with document upload/review/approval workflows, QuickBooks API invoicing automation, and DomPDF rate confirmations stored in Azure Blob Storage.</li>
+        <li>Implemented multi-tenant architecture using Tenancy For Laravel with isolated subdomains per broker, plus a REST API for bulk data migration &mdash; designed to license to 22,000+ freight brokers.</li>
         <li>Integrated Google Maps API and Macropoint for live GPS tracking visualization with a configurable notification system for shipment status updates.</li>
         <li>Deployed Meilisearch with automatic model indexing achieving sub-100ms full-text search, and configured Azure AD SSO with automatic account provisioning.</li>
         <li>Built Chart.js analytics dashboards with flexible date filtering for margin vs. volume analysis and top account metrics.</li>

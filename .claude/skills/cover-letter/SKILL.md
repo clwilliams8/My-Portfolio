@@ -71,12 +71,13 @@ _References available upon request._
 
 ### Current Work History
 
-1. **Roof Maxx** — Senior Software Engineer III (promoted Sep 2025) — Dec 2024–Present, Remote
-2. **Colton Williams Ventures, LLC** — Owner — Jun 2023–Present, Benton, AR
-3. **SOLTECH** — Full Stack Developer (Contract) — Nov 2023–Dec 2024, Remote
-4. **Active Logic** — Software Engineer — Oct 2022–Nov 2023, Remote
-5. **FLEX360** — Senior Full Stack Laravel/PHP Developer — Feb 2022–Oct 2022, Little Rock, AR
-6. **FLEX360** — Web Developer — Oct 2018–Feb 2022, Little Rock, AR
+1. **Octaria** — Software Applications Engineer (Contract) — Mar 2026–Present, Remote. Builds a production AI agent platform for an energy investment firm (**never name the end client**). No portfolio page — see the Octaria entry in `scripts/resume-2026.html` for details.
+2. **Roof Maxx** — Senior Software Engineer III (promoted Sep 2025) — Dec 2024–May 2026, Remote
+3. **Colton Williams Ventures, LLC** — Owner — Jun 2023–Present, Benton, AR
+4. **SOLTECH** — Full Stack Developer (Contract) — Nov 2023–Dec 2024, Remote
+5. **Active Logic** — Software Engineer — Oct 2022–Nov 2023, Remote
+6. **FLEX360** — Senior Full Stack Laravel/PHP Developer — Feb 2022–Oct 2022, Little Rock, AR
+7. **FLEX360** — Web Developer — Oct 2018–Feb 2022, Little Rock, AR
 
 ### Contact
 
